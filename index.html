@@ -3,77 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>DOE Phones and Gadgets</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DOE Phones and Gadgets — Buy, sell & swap phones, smartwatches, speakers and accessories in Owerri.">
 
 <style>
 :root{
   --gold:#c9a24d;
-  --ash:#f2f2f2;
+  --ash:#eeeeee;
   --dark:#1a1a1a;
-  --white:#ffffff;
   --oxblood:#4b0f1a;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:Segoe UI, sans-serif;
-  background:var(--white);
-  color:#333;
+  font-family:Segoe UI,sans-serif;
+  background:var(--ash);
+  color:#222;
   overflow-x:hidden;
 }
 
-a{text-decoration:none}
+section{padding:80px 20px}
+h2{text-align:center;margin-bottom:25px}
+p{line-height:1.6}
 
-/* ---------- GLOBAL ---------- */
-section{
-  padding:80px 20px;
-}
+.animate{opacity:0;transform:translateY(30px);transition:.9s}
+.animate.show{opacity:1;transform:none}
 
-h2{
-  text-align:center;
-  margin-bottom:25px;
-  color:var(--dark);
-}
-
-p{
-  line-height:1.6;
-}
-
-.animate{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .9s ease;
-}
-
-.animate.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ---------- HERO ---------- */
+/* HERO */
 .hero{
-  background:linear-gradient(135deg, #2a020a, var(--oxblood), #000);
-  color:var(--white);
+  background:linear-gradient(135deg,#1a0005,var(--oxblood),#000);
+  color:#fff;
   text-align:center;
   padding:100px 20px;
 }
-
-.hero h1{
-  font-size:3em;
-  color:var(--gold);
-}
-
-.hero p{
-  max-width:700px;
-  margin:15px auto 40px;
-}
+.hero h1{color:var(--gold);font-size:3em}
+.hero p{max-width:700px;margin:15px auto 35px}
 
 .hero-nav{
   display:flex;
@@ -81,44 +45,18 @@ p{
   gap:15px;
   flex-wrap:wrap;
 }
-
 .hero-nav a{
   padding:12px 30px;
-  background:rgba(255,255,255,0.1);
   border:1px solid var(--gold);
-  color:var(--gold);
   border-radius:30px;
-  font-weight:bold;
+  color:var(--gold);
 }
 
-.hero-slider{
-  max-width:900px;
-  margin:50px auto 0;
-  overflow:hidden;
-  border-radius:20px;
-}
+.slider{max-width:900px;margin:auto;overflow:hidden;border-radius:20px}
+.track{display:flex;transition:.7s}
+.track img{width:100%}
 
-.hero-track{
-  display:flex;
-  transition:.7s;
-}
-
-.hero-track img{
-  width:100%;
-}
-
-/* ---------- INFO ---------- */
-.info{
-  background:var(--ash);
-  text-align:center;
-}
-
-.info p{
-  max-width:900px;
-  margin:auto;
-}
-
-/* ---------- GRID ---------- */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -126,44 +64,15 @@ p{
   max-width:1100px;
   margin:auto;
 }
-
 .card{
-  background:var(--white);
+  background:#f7f7f7;
   border-radius:16px;
   overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
+.card img,.card video{width:100%;display:block}
 
-.card img,
-.card video{
-  width:100%;
-  display:block;
-}
-
-/* ---------- SLIDER ---------- */
-.slider{
-  max-width:900px;
-  margin:auto;
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.track{
-  display:flex;
-  transition:.7s;
-}
-
-.track img{
-  width:100%;
-}
-
-/* ---------- TEXT + BUTTON ---------- */
-.section-text{
-  max-width:800px;
-  margin:30px auto;
-  text-align:center;
-}
-
+/* CTA */
+.section-text{text-align:center;max-width:800px;margin:30px auto}
 .cta{
   display:inline-block;
   margin-top:20px;
@@ -174,49 +83,15 @@ p{
   font-weight:bold;
 }
 
-/* ---------- REVIEWS ---------- */
-.reviews{
-  background:var(--white);
-}
-
-.review{
-  background:var(--gold);
-  color:#000;
-  padding:25px;
-  border-radius:15px;
-  max-width:700px;
-  margin:20px auto;
-  font-style:italic;
-}
-
-/* ---------- CONTACT ---------- */
-.contact{
-  background:var(--ash);
-  text-align:center;
-}
-
-.contact h2{
-  font-style:italic;
-}
-
-.contact p{
-  color:#333;
-}
-
+/* CONTACT */
+.contact{text-align:center}
 .contact a{
   display:inline-block;
   margin:10px;
   padding:12px 25px;
   background:var(--gold);
-  color:#000;
   border-radius:30px;
-  font-weight:bold;
-}
-
-footer{
-  background:#e6e6e6;
-  text-align:center;
-  padding:15px;
+  color:#000;
 }
 </style>
 </head>
@@ -226,150 +101,80 @@ footer{
 <!-- HERO -->
 <div class="hero animate">
   <h1>DOE Phones and Gadgets</h1>
-  <p>Buy • Sell • Swap quality phones and gadgets with confidence.</p>
+  <p>Buy • Sell • Swap quality phones and gadgets with confidence</p>
 
   <div class="hero-nav">
     <a href="#phones">Phones</a>
     <a href="#watches">Smartwatches</a>
-    <a href="#speakers">Speakers</a>
-  </div>
-
-  <div class="hero-slider">
-    <div class="hero-track" id="heroTrack">
-      <img src="assets/images/hero-1.jpg">
-      <img src="assets/images/hero-2.jpg">
-      <img src="assets/images/hero-3.jpg">
-    </div>
+    <a href="#audio">Audio</a>
   </div>
 </div>
 
-<!-- INFO -->
-<section class="info animate">
-  <h2>What We Do</h2>
-  <p>
-    DOE Phones and Gadgets is a trusted gadget hub where customers can buy, sell, and swap
-    quality phones and accessories. We offer transparent deals, reliable products, and
-    excellent customer service both in-store and online.
-  </p>
-</section>
-
 <!-- PHONES -->
 <section id="phones" class="animate">
-  <h2>Phones</h2>
-  <div class="grid">
-    <div class="card"><img src="assets/images/phone-1.jpg"></div>
-    <div class="card"><img src="assets/images/phone-2.jpg"></div>
-    <div class="card"><img src="assets/images/phone-3.jpg"></div>
-    <div class="card">
-      <video autoplay muted loop playsinline>
-        <source src="assets/images/phone-4.mp4">
-      </video>
-    </div>
-    <div class="card">
-      <video autoplay muted loop playsinline>
-        <source src="assets/images/phone-5.mp4">
-      </video>
-    </div>
-  </div>
-
-  <div class="section-text">
-    <p>
-      We sell top-notch and quality phones including Android phones, Samsung devices, and
-      iPhones. We also buy and swap phones, helping customers upgrade easily and affordably.
-    </p>
-    <a class="cta" href="https://wa.me/2347069571406" target="_blank">Order a Phone Now</a>
-  </div>
+<h2>Phones</h2>
+<div class="grid">
+  <div class="card"><img src="assets/images/phone-1.jpg"></div>
+  <div class="card"><img src="assets/images/phone-2.jpg"></div>
+  <div class="card"><img src="assets/images/phone-3.jpg"></div>
+  <div class="card"><video autoplay muted loop playsinline src="assets/images/phone-4.mp4"></video></div>
+  <div class="card"><video autoplay muted loop playsinline src="assets/images/phone-5.mp4"></video></div>
+</div>
+<div class="section-text">
+<p>We sell top-quality Android phones, Samsung devices, and iPhones. We also buy and swap.</p>
+<a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%E2%80%99m%20interested%20in%20buying%20a%20phone.%20Please%20share%20available%20options%20and%20prices.">Order a Phone Now</a>
+</div>
 </section>
 
 <!-- WATCHES -->
 <section id="watches" class="animate">
-  <h2>Smartwatches</h2>
-  <div class="slider">
-    <div class="track" id="watchTrack">
-      <img src="assets/images/watch-1.jpg">
-      <img src="assets/images/watch-2.jpg">
-      <img src="assets/images/watch-3.jpg">
-    </div>
-  </div>
-
-  <div class="section-text">
-    <p>
-      Smartwatches combine style and functionality, helping you stay connected, active,
-      and confident throughout the day.
-    </p>
-    <a class="cta" href="https://wa.me/2347069571406" target="_blank">Order a Smartwatch Now</a>
-  </div>
+<h2>Smartwatches</h2>
+<div class="slider"><div class="track" id="watchTrack">
+<img src="assets/images/watch-1.jpg">
+<img src="assets/images/watch-2.jpg">
+<img src="assets/images/watch-3.jpg">
+</div></div>
+<div class="section-text">
+<p>Smartwatches that combine style, health tracking, and daily convenience.</p>
+<a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%E2%80%99d%20like%20to%20order%20a%20smartwatch.%20Please%20share%20prices.">Order a Smartwatch Now</a>
+</div>
 </section>
 
 <!-- AUDIO -->
-<section class="animate">
-  <h2>Earbuds & Headphones</h2>
-  <div class="slider">
-    <div class="track" id="audioTrack">
-      <img src="assets/images/audio-1.jpg">
-      <img src="assets/images/audio-2.jpg">
-      <img src="assets/images/audio-3.jpg">
-    </div>
-  </div>
-
-  <div class="section-text">
-    <p>
-      Experience clear sound, deep bass, and comfort with our range of earbuds and
-      headphones designed for everyday and premium listening.
-    </p>
-    <a class="cta" href="https://wa.me/2347069571406" target="_blank">Order Audio Now</a>
-  </div>
-</section>
-
-<!-- SPEAKERS -->
-<section id="speakers" class="animate">
-  <h2>Speakers</h2>
-  <div class="grid">
-    <div class="card"><img src="assets/images/speaker-1.jpg"></div>
-    <div class="card"><img src="assets/images/speaker-2.jpg"></div>
-  </div>
-
-  <div class="section-text">
-    <p>
-      Our speakers deliver powerful sound perfect for home, events, and outdoor enjoyment.
-    </p>
-    <a class="cta" href="https://wa.me/2347069571406" target="_blank">Order Speakers Now</a>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews animate">
-  <h2>Customer Experiences</h2>
-  <div class="review">“Reliable gadget plug with honest pricing.”</div>
-  <div class="review">“Smooth swap process and quality products.”</div>
-  <div class="review">“Best place to buy gadgets in Owerri.”</div>
+<section id="audio" class="animate">
+<h2>Earbuds & Headphones</h2>
+<div class="slider"><div class="track" id="audioTrack">
+<img src="assets/images/audio-1.jpg">
+<img src="assets/images/audio-2.jpg">
+<img src="assets/images/audio-3.jpg">
+</div></div>
+<div class="section-text">
+<p>Clear sound, deep bass, and comfort for music and calls.</p>
+<a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%E2%80%99m%20interested%20in%20buying%20earbuds%20or%20headphones.%20Please%20share%20details.">Order Audio Now</a>
+</div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact animate">
-  <h2>Contact Us</h2>
-  <p>No. 1 Market Road, Owerri, Imo State</p>
-  <a href="https://wa.me/2347069571406" target="_blank">WhatsApp</a>
-  <a href="https://www.tiktok.com/@destinyekezie1" target="_blank">TikTok</a>
-  <a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6" target="_blank">Google Maps</a>
+<h2><i>Contact Us</i></h2>
+<p>No. 1 Market Road, Owerri, Imo State</p>
+
+<div class="slider"><div class="track" id="bottomTrack">
+<img src="assets/images/bottom-1.jpg">
+<img src="assets/images/bottom-2.jpg">
+<img src="assets/images/bottom-3.jpg">
+</div></div>
+
+<a href="https://wa.me/2347069571406">WhatsApp</a>
+<a href="https://www.tiktok.com/@destinyekezie1">TikTok</a>
+<a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6">Google Maps</a>
 </section>
 
-<footer>
-© 2025 DOE Phones and Gadgets
-</footer>
-
 <script>
-/* sliders */
-let h=0,w=0,a=0;
-setInterval(()=>{h=(h+1)%3;document.getElementById("heroTrack").style.transform=`translateX(-${h*100}%)`},3000);
-setInterval(()=>{w=(w+1)%3;document.getElementById("watchTrack").style.transform=`translateX(-${w*100}%)`},3200);
-setInterval(()=>{a=(a+1)%3;document.getElementById("audioTrack").style.transform=`translateX(-${a*100}%)`},3400);
-
-/* scroll animations */
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
-},{threshold:0.15});
-document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
+let i=0;
+setInterval(()=>{i=(i+1)%3;watchTrack.style.transform=`translateX(-${i*100}%)`;audioTrack.style.transform=`translateX(-${i*100}%)`;bottomTrack.style.transform=`translateX(-${i*100}%)`;},3000);
+new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add("show")),{threshold:.15}).observe(document.body);
+document.querySelectorAll(".animate").forEach(el=>new IntersectionObserver(e=>e[0].isIntersecting&&el.classList.add("show")).observe(el));
 </script>
 
 </body>
