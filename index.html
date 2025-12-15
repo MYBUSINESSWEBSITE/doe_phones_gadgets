@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <title>DOE Phones and Gadgets | Buy • Sell • Swap</title>
 
-<meta name="description" content="DOE Phones and Gadgets – Buy, sell and swap quality phones and gadgets in Owerri, Imo State. Phones, smartwatches, earbuds, JBL speakers and more.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DOE Phones and Gadgets — buy, sell and swap phones and gadgets in Owerri, Imo State.">
 
 <style>
 :root{
   --black:#000;
   --gold:#c9a24d;
   --green:#1f7a3f;
-  --ash:#f2f2f2;
+  --ash:#f3f3f3;
   --white:#fff;
 }
 
@@ -23,104 +23,111 @@ body{
   font-family:Segoe UI, sans-serif;
   background:var(--white);
   color:#222;
+  line-height:1.6;
 }
 
+h1,h2{margin:0 0 15px}
 a{text-decoration:none}
 
 /* HERO */
 .hero{
-  background:#000;
-  color:white;
   position:relative;
+  height:80vh;
   overflow:hidden;
 }
 
-.hero-slides{
-  display:flex;
-  animation:slideHero 12s infinite;
-}
-
-.hero-slides img{
+.hero img{
   width:100%;
-  height:90vh;
+  height:80vh;
   object-fit:cover;
-}
-
-@keyframes slideHero{
-  0%{transform:translateX(0)}
-  33%{transform:translateX(-100%)}
-  66%{transform:translateX(-200%)}
-}
-
-.hero-text{
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  animation:heroFade 12s infinite;
+}
+
+.hero img:nth-child(2){animation-delay:4s}
+.hero img:nth-child(3){animation-delay:8s}
+
+@keyframes heroFade{
+  0%{opacity:0}
+  10%{opacity:1}
+  30%{opacity:1}
+  40%{opacity:0}
+  100%{opacity:0}
+}
+
+.hero-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  background:rgba(0,0,0,.6);
-  padding:30px;
-  border-radius:15px;
+  background:rgba(0,0,0,.55);
+  color:white;
+  padding:20px;
 }
 
-.hero-text h1{
+.hero-content h1{
   color:var(--gold);
-  font-size:2.8em;
-}
-
-.hero-text p{
-  margin:10px 0;
+  font-size:2.4em;
 }
 
 .btn{
-  display:inline-block;
+  margin-top:15px;
   padding:12px 30px;
   background:var(--gold);
   color:black;
   border-radius:30px;
-  margin:10px;
   font-weight:bold;
 }
 
 /* SECTIONS */
 section{
-  padding:70px 20px;
+  padding:60px 20px;
   max-width:1100px;
   margin:auto;
 }
 
-h2{
-  text-align:center;
-  color:var(--black);
-  margin-bottom:30px;
+.section-bg{
+  background:var(--ash);
 }
 
-/* SLIDERS */
-.slider{
-  display:flex;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
 }
 
-.slider img,
-.slider video{
-  width:280px;
+.card{
+  background:white;
   border-radius:15px;
-  scroll-snap-align:start;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-video{
+.card img,
+.card video{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.card video{
   autoplay:true;
   muted:true;
   loop:true;
 }
 
+.card p{
+  padding:15px;
+  font-weight:600;
+}
+
 /* INFO */
 .info{
-  background:var(--ash);
-  padding:50px 20px;
-  border-radius:20px;
+  text-align:center;
 }
 
 /* REVIEWS */
@@ -139,19 +146,11 @@ video{
   font-style:italic;
 }
 
-/* BOTTOM SLIDER */
-.bottom-slider{
-  display:flex;
-  animation:slideBottom 10s infinite;
-}
-
-.bottom-slider img{
-  width:100%;
-}
-
-@keyframes slideBottom{
-  0%{transform:translateX(0)}
-  50%{transform:translateX(-100%)}
+/* BOTTOM IMAGES */
+.bottom-images{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
 /* CONTACT */
@@ -171,16 +170,11 @@ video{
   border-radius:30px;
 }
 
-/* FOOTER */
 footer{
   background:#111;
   color:white;
   text-align:center;
   padding:15px;
-}
-
-@media(max-width:600px){
-  .hero-text h1{font-size:2em}
 }
 </style>
 </head>
@@ -189,26 +183,23 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-slides">
-    <img src="assets/images/hero-1.jpg">
-    <img src="assets/images/hero-2.jpg">
-    <img src="assets/images/hero-3.jpg">
-  </div>
+  <img src="assets/images/hero-1.jpg">
+  <img src="assets/images/hero-2.jpg">
+  <img src="assets/images/hero-3.jpg">
 
-  <div class="hero-text">
+  <div class="hero-content">
     <h1>DOE Phones & Gadgets</h1>
     <p>Buy • Sell • Swap Phones & Gadgets</p>
-    <a class="btn" href="https://wa.me/2347069571406?text=Hello!%20I’m%20interested%20in%20buying%20a%20gadget.%20Please%20share%20prices%20and%20details.">Chat on WhatsApp</a>
+    <a class="btn" href="https://wa.me/2347069571406?text=Hello!%20I’m%20interested%20in%20buying%20a%20gadget.">Chat on WhatsApp</a>
   </div>
 </div>
 
 <!-- INFO -->
-<section class="info">
+<section class="section-bg info">
 <h2>What Are You Buying From Us Today?</h2>
 <p>
-We are a trusted and reliable gadget store offering quality phones, smartwatches,
-earbuds, JBL speakers and accessories. We buy, sell and swap devices,
-giving fair prices and transparent deals.
+We sell quality phones, smartwatches, earbuds, JBL speakers and accessories.
+We also buy and swap devices at fair prices.
 Located at No.1 Market Road, Owerri, Imo State.
 </p>
 </section>
@@ -216,59 +207,55 @@ Located at No.1 Market Road, Owerri, Imo State.
 <!-- PHONES -->
 <section>
 <h2>Phones</h2>
-<div class="slider">
-<img src="assets/images/phone-1.jpg">
-<img src="assets/images/phone-2.jpg">
-<img src="assets/images/phone-3.jpg">
-<video src="assets/images/phone-4.mp4" autoplay muted loop></video>
-<video src="assets/images/phone-5.mp4" autoplay muted loop></video>
+<div class="grid">
+<div class="card"><img src="assets/images/phone-1.jpg"></div>
+<div class="card"><img src="assets/images/phone-2.jpg"></div>
+<div class="card"><img src="assets/images/phone-3.jpg"></div>
+<div class="card"><video src="assets/images/phone-4.mp4" autoplay muted loop></video></div>
+<div class="card"><video src="assets/images/phone-5.mp4" autoplay muted loop></video></div>
 </div>
-<a class="btn" href="https://wa.me/2347069571406">Buy Phones</a>
 </section>
 
 <!-- WATCHES -->
-<section>
+<section class="section-bg">
 <h2>Smartwatches</h2>
-<div class="slider">
-<img src="assets/images/watch-1.jpg">
-<img src="assets/images/watch-2.jpg">
-<img src="assets/images/watch-3.jpg">
+<div class="grid">
+<div class="card"><img src="assets/images/watch-1.jpg"></div>
+<div class="card"><img src="assets/images/watch-2.jpg"></div>
+<div class="card"><img src="assets/images/watch-3.jpg"></div>
 </div>
-<a class="btn" href="https://wa.me/2347069571406">Buy Smartwatches</a>
 </section>
 
 <!-- AUDIO -->
 <section>
 <h2>Earbuds & Headphones</h2>
-<div class="slider">
-<img src="assets/images/audio-1.jpg">
-<img src="assets/images/audio-2.jpg">
-<img src="assets/images/audio-3.jpg">
+<div class="grid">
+<div class="card"><img src="assets/images/audio-1.jpg"></div>
+<div class="card"><img src="assets/images/audio-2.jpg"></div>
+<div class="card"><img src="assets/images/audio-3.jpg"></div>
 </div>
-<a class="btn" href="https://wa.me/2347069571406">Buy Audio Gadgets</a>
 </section>
 
 <!-- SPEAKERS -->
-<section>
+<section class="section-bg">
 <h2>JBL & Speakers</h2>
-<div class="slider">
-<img src="assets/images/speaker-1.jpg">
-<img src="assets/images/speaker-2.jpg">
+<div class="grid">
+<div class="card"><img src="assets/images/speaker-1.jpg"></div>
+<div class="card"><img src="assets/images/speaker-2.jpg"></div>
 </div>
-<a class="btn" href="https://wa.me/2347069571406">Buy Speakers</a>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews">
 <h2>Customer Experiences</h2>
-<div class="review">“Fast service and original products. Highly recommended.”</div>
-<div class="review">“Swapped my phone easily with no stress. Very trustworthy.”</div>
-<div class="review">“Best gadget store in Owerri. Clean deals.”</div>
+<div class="review">“Original products and honest pricing.”</div>
+<div class="review">“Best place to swap phones in Owerri.”</div>
+<div class="review">“Fast service and trustworthy.”</div>
 </section>
 
-<!-- BOTTOM SLIDER -->
+<!-- BOTTOM IMAGES -->
 <section>
-<div class="bottom-slider">
+<div class="bottom-images">
 <img src="assets/images/bottom-1.jpg">
 <img src="assets/images/bottom-2.jpg">
 <img src="assets/images/bottom-3.jpg">
@@ -277,7 +264,7 @@ Located at No.1 Market Road, Owerri, Imo State.
 
 <!-- CONTACT -->
 <section class="contact">
-<h2>Contact & Visit Us</h2>
+<h2>Contact Us</h2>
 <a href="https://wa.me/2347069571406">WhatsApp</a>
 <a href="https://www.tiktok.com/@destinyekezie1">TikTok</a>
 <a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6">Google Maps</a>
