@@ -24,47 +24,38 @@ body{
 }
 
 section{padding:90px 20px}
-
 a{text-decoration:none}
 
-/* ===== SECTION HEADINGS ===== */
+/* SECTION TITLES */
 .section-title{
   text-align:center;
-  font-size:2.3em;
-  font-weight:800;
+  font-size:2.4em;
+  font-weight:900;
+  margin-bottom:40px;
   position:relative;
-  margin-bottom:50px;
 }
 
 .section-title::after{
   content:"";
-  position:absolute;
+  display:block;
   width:0;
   height:4px;
   background:var(--gold);
-  left:50%;
-  bottom:-12px;
-  transform:translateX(-50%);
+  margin:12px auto 0;
   animation:underline 1.5s forwards;
 }
 
-@keyframes underline{
-  to{width:120px}
-}
+@keyframes underline{to{width:140px}}
 
-/* Santa cap */
-.section-title span{
-  position:relative;
-}
 .section-title span::before{
   content:"🎅";
   position:absolute;
-  top:-28px;
-  left:-20px;
+  top:-30px;
+  left:-22px;
   font-size:24px;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:#fff;
@@ -100,7 +91,19 @@ a{text-decoration:none}
 .hero-track{display:flex;transition:.7s}
 .hero-track img{width:100%}
 
-/* ===== GRID ===== */
+/* INFO PANEL */
+.info-panel{
+  background:var(--oxblood);
+  color:var(--gold);
+  padding:30px 35px;
+  border-radius:30px;
+  max-width:850px;
+  margin:30px auto 0;
+  text-align:center;
+  line-height:1.7;
+}
+
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -121,7 +124,7 @@ a{text-decoration:none}
   display:block;
 }
 
-/* ===== SLIDER ===== */
+/* SLIDERS */
 .slider{
   max-width:900px;
   margin:auto;
@@ -132,49 +135,37 @@ a{text-decoration:none}
 .track{display:flex;transition:.7s}
 .track img{width:100%}
 
-/* ===== TEXT ===== */
-.section-text{
-  max-width:800px;
-  margin:30px auto;
-  text-align:center;
-  line-height:1.6;
-}
-
+/* CTA */
 .cta{
   display:inline-block;
-  margin-top:20px;
-  padding:12px 30px;
+  margin-top:25px;
+  padding:12px 34px;
   background:var(--gold);
   color:#000;
   border-radius:30px;
   font-weight:bold;
 }
 
-/* ===== REVIEWS ===== */
+/* REVIEWS */
 .reviews{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:var(--gold);
 }
 
-.review-track{
-  display:flex;
-  transition:.7s;
-}
-
+.review-track{display:flex;transition:.7s}
 .review{
   min-width:100%;
-  padding:40px;
+  padding:45px;
   font-style:italic;
   text-align:center;
 }
-
 .review::before{
   content:"“";
-  font-size:40px;
+  font-size:42px;
   display:block;
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:var(--gold);
@@ -191,7 +182,7 @@ a{text-decoration:none}
   font-weight:bold;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   background:#111;
   color:var(--gold);
@@ -223,11 +214,12 @@ footer{
   </div>
 </div>
 
-<!-- INFO -->
+<!-- WHAT WE DO -->
 <section>
   <h2 class="section-title"><span>What We Do</span></h2>
-  <div class="section-text">
-    We specialize in buying, selling and swapping trusted phones, smartwatches and audio gadgets — ensuring quality, transparency and value.
+  <div class="info-panel">
+    We buy, sell and swap trusted phones, smartwatches and audio gadgets.
+    Our focus is quality, transparency and smooth upgrades.
   </div>
 </section>
 
@@ -239,14 +231,14 @@ footer{
     <div class="card"><img src="assets/images/phone-2.jpg"></div>
     <div class="card"><video autoplay muted loop playsinline src="assets/images/phone-4.mp4"></video></div>
   </div>
-  <div class="section-text">
-    Android, Samsung and iPhones available. Buy or swap with ease.
+  <div class="info-panel">
+    Android, Samsung & iPhones available. We also buy and swap devices.
     <br>
     <a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%20want%20to%20order%20a%20phone.%20Please%20share%20available%20models%20and%20prices." target="_blank">Order a Phone Now</a>
   </div>
 </section>
 
-<!-- WATCHES -->
+<!-- SMARTWATCHES -->
 <section id="watches">
   <h2 class="section-title"><span>Smartwatches</span></h2>
   <div class="slider">
@@ -256,8 +248,8 @@ footer{
       <img src="assets/images/watch-3.jpg">
     </div>
   </div>
-  <div class="section-text">
-    Smart style meets daily productivity.
+  <div class="info-panel">
+    Smartwatches that elevate your style, fitness and productivity.
     <br>
     <a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%20want%20to%20order%20a%20smartwatch.%20Please%20share%20prices." target="_blank">Order a Smartwatch Now</a>
   </div>
@@ -272,10 +264,24 @@ footer{
       <img src="assets/images/audio-2.jpg">
     </div>
   </div>
-  <div class="section-text">
-    Crisp sound, deep bass, total comfort.
+  <div class="info-panel">
+    Crisp sound, deep bass and premium comfort for every lifestyle.
     <br>
     <a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%20want%20to%20order%20earbuds%20or%20headphones." target="_blank">Order Audio Now</a>
+  </div>
+</section>
+
+<!-- SPEAKERS (RESTORED) -->
+<section id="speakers">
+  <h2 class="section-title"><span>Speakers</span></h2>
+  <div class="grid">
+    <div class="card"><img src="assets/images/speaker-1.jpg"></div>
+    <div class="card"><img src="assets/images/speaker-2.jpg"></div>
+  </div>
+  <div class="info-panel">
+    Powerful speakers built for clear sound indoors and outdoors.
+    <br>
+    <a class="cta" href="https://wa.me/2347069571406?text=Hello%20DOE%20Phones%20and%20Gadgets,%20I%20want%20to%20order%20a%20speaker.%20Please%20share%20options." target="_blank">Order Speakers Now</a>
   </div>
 </section>
 
@@ -285,9 +291,9 @@ footer{
   <div class="slider">
     <div class="review-track" id="reviewTrack">
       <div class="review">Best gadget store in Owerri.</div>
-      <div class="review">Fast swap process and honest pricing.</div>
-      <div class="review">Quality phones, no regrets.</div>
-      <div class="review">Highly recommended for gadgets.</div>
+      <div class="review">Fast swaps and honest pricing.</div>
+      <div class="review">Quality devices every time.</div>
+      <div class="review">Highly recommended.</div>
     </div>
   </div>
 </section>
@@ -313,11 +319,11 @@ footer{
 <footer>© 2025 DOE Phones and Gadgets</footer>
 
 <script>
-let i=0,j=0,k=0,r=0;
-setInterval(()=>heroTrack.style.transform=`translateX(-${(i++%3)*100}%)`,3000);
-setInterval(()=>watchTrack.style.transform=`translateX(-${(j++%3)*100}%)`,3200);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(k++%2)*100}%)`,3400);
-setInterval(()=>bottomTrack.style.transform=`translateX(-${(i++%3)*100}%)`,3600);
+let h=0,w=0,a=0,b=0,r=0;
+setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%3)*100}%)`,3000);
+setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%3)*100}%)`,3200);
+setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%2)*100}%)`,3400);
+setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,3600);
 setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,4000);
 </script>
 
