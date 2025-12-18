@@ -1,1 +1,180 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DOE Phones & Gadgets – Prices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --gold:#c9a24d;
+  --ash:#ededed;
+  --ash-dark:#e2e2e2;
+  --oxblood:#4b0f1a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Segoe UI, sans-serif;
+  background:var(--ash);
+  color:#222;
+  overflow-x:hidden;
+}
+
+section{padding:90px 20px}
+a{text-decoration:none}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
+  color:#fff;
+  text-align:center;
+  padding:110px 20px;
+}
+.hero h1{color:var(--gold);font-size:3em}
+.hero p{max-width:700px;margin:15px auto}
+
+.hero-nav{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.hero-nav a{
+  padding:12px 30px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* PRICE SLIDER */
+.price-slider{
+  max-width:900px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:20px;
+}
+.price-track{display:flex;transition:.7s}
+.price-card{
+  min-width:100%;
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+}
+.price-card img{width:100%;max-width:300px}
+.old-price{
+  text-decoration:line-through;
+  color:#888;
+  font-size:1em;
+}
+.new-price{
+  font-size:1.8em;
+  color:var(--oxblood);
+  font-weight:900;
+}
+.buy{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 36px;
+  background:var(--gold);
+  color:#000;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* REVIEWS */
+.reviews{
+  background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
+  color:var(--gold);
+}
+.review{
+  padding:40px;
+  text-align:center;
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:var(--gold);
+  text-align:center;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Phone Prices</h1>
+  <p>Choose your device. Transparent pricing. No stress.</p>
+  <div class="hero-nav">
+    <a href="index.html">⬅ Back Home</a>
+    <a href="https://wa.me/2347069571406">WhatsApp</a>
+  </div>
+</div>
+
+<!-- IPHONE PRICES -->
+<section>
+  <h2 style="text-align:center;color:#4b0f1a;">Available iPhones</h2>
+
+  <div class="price-slider">
+    <div class="price-track" id="priceTrack">
+
+      <div class="price-card">
+        <img src="assets/images/iphone12.jpg">
+        <h3>iPhone 12 / 12 Pro / 12 Pro Max</h3>
+        <p class="old-price">₦750,000</p>
+        <p class="new-price">₦500,000</p>
+        <a class="buy" href="https://wa.me/2347069571406">Buy Now</a>
+      </div>
+
+      <div class="price-card">
+        <img src="assets/images/iphone13.jpg">
+        <h3>iPhone 13 / 13 Pro / 13 Pro Max</h3>
+        <p class="old-price">₦850,000</p>
+        <p class="new-price">₦650,000</p>
+        <a class="buy" href="https://wa.me/2347069571406">Buy Now</a>
+      </div>
+
+      <div class="price-card">
+        <img src="assets/images/iphone14.jpg">
+        <h3>iPhone 14 / 14 Pro / Pro Max</h3>
+        <p class="old-price">₦1,200,000</p>
+        <p class="new-price">₦980,000</p>
+        <a class="buy" href="https://wa.me/2347069571406">Buy Now</a>
+      </div>
+
+      <div class="price-card">
+        <img src="assets/images/iphone15.jpg">
+        <h3>iPhone 15 Series</h3>
+        <p class="old-price">₦1,600,000</p>
+        <p class="new-price">₦1,350,000</p>
+        <a class="buy" href="https://wa.me/2347069571406">Buy Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="review">“Fast delivery, original phone, zero issues.”</div>
+</section>
+
+<footer>© 2025 DOE Phones and Gadgets</footer>
+
+<script>
+let i=0;
+setInterval(()=>{
+  priceTrack.style.transform=`translateX(-${(i++%4)*100}%)`;
+},4000);
+</script>
+
+</body>
+</html>
