@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Add to Cart Now | DOE Phone and Gadgets</title>
+<title>DOE Phone & Gadgets | Shop Phones & Accessories</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DOE Phone and Gadgets – Buy iPhones, smartwatches, headphones and quality gadgets. Order directly via WhatsApp.">
 
 <style>
 :root{
@@ -14,14 +15,15 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222}
+body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;line-height:1.6}
+img{max-width:100%;display:block}
 
 /* HERO */
 .hero{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:#fff;
   text-align:center;
-  padding:110px 20px;
+  padding:110px 20px 90px;
 }
 .hero h1{font-size:3em;color:var(--gold);letter-spacing:2px}
 .hero small{display:block;margin-top:10px;font-size:1em;color:#f1e6c8}
@@ -52,6 +54,7 @@ body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222}
   color:var(--gold);
   font-weight:bold;
   cursor:pointer;
+  text-decoration:none;
 }
 .icon-nav img{width:55px;height:55px}
 
@@ -69,7 +72,7 @@ section{padding:90px 20px}
 .track{
   display:flex;
   gap:20px;
-  animation:slide 25s linear infinite;
+  animation:slide 30s linear infinite;
 }
 .card{
   min-width:280px;
@@ -77,8 +80,10 @@ section{padding:90px 20px}
   border-radius:18px;
   overflow:hidden;
   cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
-.card img{width:100%;display:block}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+
 .price-info{
   background:var(--oxblood);
   color:var(--gold);
@@ -87,7 +92,6 @@ section{padding:90px 20px}
   font-weight:bold;
 }
 
-/* LOOP FIX */
 @keyframes slide{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
@@ -95,14 +99,16 @@ section{padding:90px 20px}
 
 /* CTA */
 .cta{
-  display:inline-block;
-  margin:25px auto 0;
+  display:block;
+  width:fit-content;
+  margin:35px auto 0;
   padding:14px 40px;
   background:var(--gold);
   color:#000;
   border-radius:35px;
   font-weight:900;
   text-align:center;
+  text-decoration:none;
 }
 
 /* MODAL */
@@ -123,10 +129,6 @@ section{padding:90px 20px}
   max-width:420px;
   text-align:center;
 }
-.modal-content img{
-  width:100%;
-  border-radius:18px;
-}
 .modal-content h3{margin:18px 0}
 .modal-content button{
   margin:8px;
@@ -144,8 +146,8 @@ section{padding:90px 20px}
   color:var(--gold);
   text-align:center;
 }
-.review{padding:45px;font-style:italic}
-footer{padding:15px}
+.review{padding:45px;font-style:italic;max-width:900px;margin:auto}
+footer{padding:15px;font-size:.9em}
 
 @media(max-width:768px){
   .hero h1{font-size:2.2em}
@@ -155,80 +157,60 @@ footer{padding:15px}
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>ADD TO CART NOW</h1>
-  <small>DOE Phone and Gadgets</small>
+<header class="hero">
+  <h1>DOE PHONE & GADGETS</h1>
+  <small>Trusted Phones • Smart Gadgets • Easy WhatsApp Orders</small>
 
   <div class="search-box">
-    <input id="searchInput" placeholder="Search anything on this page…">
+    <input id="searchInput" placeholder="Search products on this page…" aria-label="Search products">
   </div>
 
-  <div class="icon-nav">
-    <a onclick="document.getElementById('phones').scrollIntoView({behavior:'smooth'})">
-      <img src="assets/images/icon-phone.png"><span>Phones</span>
-    </a>
-    <a onclick="document.getElementById('gadgets').scrollIntoView({behavior:'smooth'})">
-      <img src="assets/images/icon-watch.png"><span>Smartwatches & Gadgets</span>
-    </a>
-    <a onclick="history.back()">
-      <img src="assets/images/icon-back.png"><span>Back</span>
-    </a>
-  </div>
-</div>
+  <nav class="icon-nav">
+    <a href="#phones"><img src="assets/images/icon-phone.png" alt="Phones">Phones</a>
+    <a href="#gadgets"><img src="assets/images/icon-watch.png" alt="Gadgets">Gadgets</a>
+    <a onclick="history.back()"><img src="assets/images/icon-back.png" alt="Back">Back</a>
+  </nav>
+</header>
 
-<!-- PHONES -->
+<main>
+
 <section id="phones">
-<h2 class="section-title">iPhones</h2>
-
-<div class="slider">
-<div class="track">
-<div class="card" data-name="iPhone 17 Air"><img src="assets/images/iphone17-air.jpg"><div class="price-info">iPhone 17 Air</div></div>
-<div class="card" data-name="iPhone 17 Pro Max"><img src="assets/images/iphone17-promax.jpg"><div class="price-info">iPhone 17 Pro Max</div></div>
-<div class="card" data-name="iPhone 14 Pro"><img src="assets/images/iphone14.jpg"><div class="price-info">iPhone 14 Pro</div></div>
-<div class="card" data-name="iPhone 13 Pro"><img src="assets/images/iphone13.jpg"><div class="price-info">iPhone 13 Pro</div></div>
-</div>
-</div>
-
-<a class="cta" onclick="orderWhatsApp('iPhone')">Order iPhone Now</a>
+<h2 class="section-title">iPhones Available</h2>
+<div class="slider"><div class="track">
+  <div class="card" data-name="iPhone 17 Air"><img src="assets/images/iphone17-air.jpg" alt="iPhone 17 Air"><div class="price-info">iPhone 17 Air</div></div>
+  <div class="card" data-name="iPhone 17 Pro Max"><img src="assets/images/iphone17-promax.jpg" alt="iPhone 17 Pro Max"><div class="price-info">iPhone 17 Pro Max</div></div>
+  <div class="card" data-name="iPhone 14 Pro"><img src="assets/images/iphone14.jpg" alt="iPhone 14 Pro"><div class="price-info">iPhone 14 Pro</div></div>
+  <div class="card" data-name="iPhone 13 Pro"><img src="assets/images/iphone13.jpg" alt="iPhone 13 Pro"><div class="price-info">iPhone 13 Pro</div></div>
+</div></div>
+<a class="cta" onclick="orderWhatsApp('iPhone')">Order iPhone via WhatsApp</a>
 </section>
 
-<!-- MERGED GADGETS -->
 <section id="gadgets">
-<h2 class="section-title">Smartwatches, Headphones & Other Gadgets</h2>
-
-<div class="slider">
-<div class="track">
-<div class="card" data-name="Our Product"><img src="assets/images/product-1.jpg"><div class="price-info">Our Product</div></div>
-<div class="card" data-name="Our Product 1"><img src="assets/images/product-2.jpg"><div class="price-info">Our Product 1</div></div>
-<div class="card" data-name="Our Product 2"><img src="assets/images/product-3.jpg"><div class="price-info">Our Product 2</div></div>
-<div class="card" data-name="Our Product 3"><img src="assets/images/product-4.jpg"><div class="price-info">Our Product 3</div></div>
-<div class="card" data-name="Our Product 4"><img src="assets/images/product-5.jpg"><div class="price-info">Our Product 4</div></div>
-<div class="card" data-name="Our Product 5"><img src="assets/images/product-6.jpg"><div class="price-info">Our Product 5</div></div>
-<div class="card" data-name="Our Product 6"><img src="assets/images/product-7.jpg"><div class="price-info">Our Product 6</div></div>
-</div>
-</div>
-
-<a class="cta" onclick="orderWhatsApp('Our Product')">Order Now</a>
+<h2 class="section-title">Smartwatches & Gadgets</h2>
+<div class="slider"><div class="track">
+  <div class="card" data-name="Smartwatch"><img src="assets/images/product-1.jpg" alt="Smartwatch"><div class="price-info">Smartwatch</div></div>
+  <div class="card" data-name="Wireless Headphones"><img src="assets/images/product-2.jpg" alt="Wireless Headphones"><div class="price-info">Wireless Headphones</div></div>
+  <div class="card" data-name="Power Bank"><img src="assets/images/product-3.jpg" alt="Power Bank"><div class="price-info">Power Bank</div></div>
+</div></div>
+<a class="cta" onclick="orderWhatsApp('Gadget')">Order Gadgets via WhatsApp</a>
 </section>
 
-<!-- REVIEWS (UNCHANGED) -->
 <section class="reviews">
-<div class="review">“Fast, honest and reliable gadgets. Highly recommended.”</div>
-<div class="review">“Smooth swapping process and excellent customer service.”</div>
+  <div class="review">“Fast, honest and reliable gadgets. Highly recommended.”</div>
+  <div class="review">“Smooth swapping process and excellent customer service.”</div>
 </section>
+
+</main>
 
 <footer>© 2025 DOE Phone and Gadgets</footer>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
-<div class="modal-content">
-<img id="modalImg">
-<h3 id="modalTitle"></h3>
-<button onclick="addCart()">Add to Cart</button>
-<button onclick="purchase()">Purchase Now</button>
-<button onclick="closeModal()">Back</button>
-</div>
+  <div class="modal-content">
+    <img id="modalImg" alt="Selected product">
+    <h3 id="modalTitle"></h3>
+    <button onclick="purchase()">Order via WhatsApp</button>
+    <button onclick="closeModal()">Close</button>
+  </div>
 </div>
 
 <script>
@@ -237,30 +219,31 @@ const modalImg=document.getElementById("modalImg");
 const modalTitle=document.getElementById("modalTitle");
 let currentProduct="";
 
-document.querySelectorAll(".card").forEach(c=>{
-  c.onclick=()=>{
-    currentProduct=c.dataset.name;
-    modalImg.src=c.querySelector("img").src;
+document.querySelectorAll(".card").forEach(card=>{
+  card.addEventListener("click",()=>{
+    currentProduct=card.dataset.name;
+    modalImg.src=card.querySelector("img").src;
     modalTitle.textContent=currentProduct;
     modal.style.display="flex";
-  }
+  });
 });
 
 function closeModal(){modal.style.display="none"}
 
 function orderWhatsApp(name){
-  window.open(`https://wa.me/2347069571406?text=Hello%20DOE%20Phone%20and%20Gadgets,%20I%20want%20to%20order%20${encodeURIComponent(name)}.%20How%20can%20I%20proceed?`);
+  window.open(`https://wa.me/2347069571406?text=Hello%20DOE%20Phone%20and%20Gadgets,%20I%20want%20to%20order%20${encodeURIComponent(name)}.`);
 }
 
 function purchase(){orderWhatsApp(currentProduct)}
-function addCart(){orderWhatsApp(currentProduct)}
 
-document.getElementById("searchInput").addEventListener("keydown",e=>{
+// Simple search scroll
+const searchInput=document.getElementById("searchInput");
+searchInput.addEventListener("keydown",e=>{
   if(e.key==="Enter"){
-    let q=e.target.value.toLowerCase();
-    document.querySelectorAll("section").forEach(s=>{
-      if(s.innerText.toLowerCase().includes(q)){
-        s.scrollIntoView({behavior:"smooth"});
+    const q=e.target.value.toLowerCase();
+    document.querySelectorAll("section").forEach(sec=>{
+      if(sec.innerText.toLowerCase().includes(q)){
+        sec.scrollIntoView({behavior:"smooth"});
       }
     });
   }
