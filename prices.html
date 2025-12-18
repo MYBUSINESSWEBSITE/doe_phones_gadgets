@@ -41,7 +41,7 @@ section{padding:90px 20px} a{text-decoration:none;}
 /* ICON NAV BELOW HERO */
 .icon-nav{display:flex;justify-content:center;gap:25px;margin:25px 0;}
 .icon-nav a{display:flex;flex-direction:column;align-items:center;color:var(--gold);font-weight:bold;text-decoration:none;}
-.icon-nav img{width:70px;height:70px;margin-bottom:5px;}
+.icon-nav img{width:60px;height:60px;margin-bottom:5px;}
 
 /* INFO PANEL */
 .info-panel{background:var(--oxblood);color:var(--gold);padding:30px 35px;border-radius:30px;max-width:850px;margin:30px auto 0;text-align:center;line-height:1.7;}
@@ -56,7 +56,7 @@ section{padding:90px 20px} a{text-decoration:none;}
 /* GRID & CARDS */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:auto;}
 .card{background:var(--ash-dark);border-radius:16px;overflow:hidden;}
-.card img, .card video{width:100%; max-height:350px; object-fit:cover; display:block;}
+.card img, .card video{width:100%;display:block;}
 
 /* SLIDERS */
 .slider{max-width:900px;margin:auto;overflow:hidden;border-radius:20px;}
@@ -64,9 +64,7 @@ section{padding:90px 20px} a{text-decoration:none;}
 .track img{width:100%;}
 
 /* PRICE PANEL */
-.price-info{background:#4b0f1a;color:var(--gold);padding:12px;margin-top:10px;border-radius:12px;text-align:center;font-weight:bold;}
-.old-price{text-decoration: line-through; color:#ccc; display:block; font-size:0.95em;}
-.new-price{font-size:1.2em; font-weight:900; margin-top:5px;}
+.price-info{background:#4b0f1a;color:var(--gold);padding:15px;margin-top:10px;border-radius:12px;text-align:center;font-weight:bold;font-size:1.1em;}
 
 /* CTA */
 .cta{display:inline-block;margin-top:15px;padding:12px 34px;background:var(--gold);color:#000;border-radius:30px;font-weight:bold;}
@@ -131,10 +129,10 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 
   <!-- iPhone 11 Series -->
   <div class="slider">
-    <div class="track" id="iphone11">
-      <div class="card"><img src="assets/images/iphone11.jpg"><div class="price-info">₦350,000</div></div>
-      <div class="card"><img src="assets/images/iphone11pro.jpg"><div class="price-info">₦450,000</div></div>
-      <div class="card"><img src="assets/images/iphone11promax.jpg"><div class="price-info">₦550,000</div></div>
+    <div class="track" id="iphone11Track">
+      <div class="card"><img src="assets/images/iphone11.jpg"><div class="price-info">iPhone 11 64GB - ₦295,000</div></div>
+      <div class="card"><img src="assets/images/iphone11pro.jpg"><div class="price-info">iPhone 11 Pro 64GB - ₦375,000</div></div>
+      <div class="card"><img src="assets/images/iphone11promax.jpg"><div class="price-info">iPhone 11 Pro Max 64GB - ₦405,000</div></div>
     </div>
   </div>
   <div class="info-panel">iPhone 11 Series: Great camera, solid performance, smooth UI.</div>
@@ -142,16 +140,67 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 
   <!-- iPhone 12 Series -->
   <div class="slider">
-    <div class="track" id="iphone12">
-      <div class="card"><img src="assets/images/iphone12.jpg"><div class="price-info">₦500,000</div></div>
-      <div class="card"><img src="assets/images/iphone12pro.jpg"><div class="price-info">₦600,000</div></div>
-      <div class="card"><img src="assets/images/iphone12promax.jpg"><div class="price-info">₦700,000</div></div>
+    <div class="track" id="iphone12Track">
+      <div class="card"><img src="assets/images/iphone12.jpg"><div class="price-info">iPhone 12 Pro 128GB - ₦475,000</div></div>
+      <div class="card"><img src="assets/images/iphone12pro.jpg"><div class="price-info">iPhone 12 Pro 256GB - ₦530,000</div></div>
+      <div class="card"><img src="assets/images/iphone12promax.jpg"><div class="price-info">iPhone 12 Pro Max 128GB - ₦570,000</div></div>
     </div>
   </div>
-  <div class="info-panel">iPhone 12 Series: Improved battery, faster performance, advanced camera.</div>
+  <div class="info-panel">iPhone 12 Series: Smooth performance, upgraded camera and display.</div>
   <a class="cta" href="https://wa.me/2347069571406">Order iPhone 12 Series Now</a>
 
-  <!-- iPhone 13-14-15-16-17 follow similar structure with Naira prices -->
+  <!-- iPhone 13 Series -->
+  <div class="slider">
+    <div class="track" id="iphone13Track">
+      <div class="card"><img src="assets/images/iphone13.jpg"><div class="price-info">iPhone 13 128GB - ₦480,000</div></div>
+      <div class="card"><img src="assets/images/iphone13pro.jpg"><div class="price-info">iPhone 13 Pro 128GB - ₦670,000</div></div>
+      <div class="card"><img src="assets/images/iphone13promax.jpg"><div class="price-info">iPhone 13 Pro Max 128GB - ₦750,000</div></div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 13 Series: Larger battery, faster performance, improved camera.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 13 Series Now</a>
+
+  <!-- iPhone 14 Series -->
+  <div class="slider">
+    <div class="track" id="iphone14Track">
+      <div class="card"><img src="assets/images/iphone14.jpg"><div class="price-info">iPhone 14 Pro 128GB - ₦750,000</div></div>
+      <div class="card"><img src="assets/images/iphone14pro.jpg"><div class="price-info">iPhone 14 Pro 256GB - ₦800,000</div></div>
+      <div class="card"><img src="assets/images/iphone14promax.jpg"><div class="price-info">iPhone 14 Pro Max 128GB - ₦820,000</div></div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 14 Series: Latest features with excellent display and camera.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 14 Series Now</a>
+
+  <!-- iPhone 15 Series -->
+  <div class="slider">
+    <div class="track" id="iphone15Track">
+      <div class="card"><img src="assets/images/iphone15.jpg"><div class="price-info">iPhone 15 Pro Max 256GB - ₦1,250,000</div></div>
+      <div class="card"><img src="assets/images/iphone15pro.jpg"><div class="price-info">iPhone 15 Pro Max 512GB - ₦1,450,000</div></div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 15 Series: High-end performance with premium design.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 15 Series Now</a>
+
+  <!-- iPhone 16 Series -->
+  <div class="slider">
+    <div class="track" id="iphone16Track">
+      <div class="card"><img src="assets/images/iphone16.jpg"><div class="price-info">iPhone 16 128GB - ₦1,000,000</div></div>
+      <div class="card"><img src="assets/images/iphone16pro.jpg"><div class="price-info">iPhone 16 Pro 128GB - ₦1,320,000</div></div>
+      <div class="card"><img src="assets/images/iphone16promax.jpg"><div class="price-info">iPhone 16 Pro Max 256GB - ₦1,600,000</div></div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 16 Series: Cutting-edge performance and top-tier display.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 16 Series Now</a>
+
+  <!-- iPhone 17 Series -->
+  <div class="slider">
+    <div class="track" id="iphone17Track">
+      <div class="card"><img src="assets/images/iphone17.jpg"><div class="price-info">iPhone 17 - ₦TBD</div></div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 17: Ultimate performance and latest features.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 17 Now</a>
+
 </section>
 
 <!-- SMARTWATCHES -->
@@ -159,11 +208,11 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   <h2 class="section-title"><span>Smartwatches</span></h2>
   <div class="slider">
     <div class="track" id="watchTrack">
-      <div class="card"><img src="assets/images/watch-1.jpg"><div class="price-info">₦120,000</div></div>
-      <div class="card"><img src="assets/images/watch-2.jpg"><div class="price-info">₦150,000</div></div>
-      <div class="card"><img src="assets/images/watch-3.jpg"><div class="price-info">₦180,000</div></div>
-      <div class="card"><img src="assets/images/watch-4.jpg"><div class="price-info">₦200,000</div></div>
-      <div class="card"><img src="assets/images/watch-5.jpg"><div class="price-info">₦220,000</div></div>
+      <div class="card"><img src="assets/images/watch-1.jpg"><div class="price-info">Watch A - ₦120,000</div></div>
+      <div class="card"><img src="assets/images/watch-2.jpg"><div class="price-info">Watch B - ₦150,000</div></div>
+      <div class="card"><img src="assets/images/watch-3.jpg"><div class="price-info">Watch C - ₦180,000</div></div>
+      <div class="card"><img src="assets/images/watch-4.jpg"><div class="price-info">Watch D - ₦200,000</div></div>
+      <div class="card"><img src="assets/images/watch-5.jpg"><div class="price-info">Watch E - ₦220,000</div></div>
     </div>
   </div>
   <div class="info-panel">Smartwatches improve fitness tracking, notifications, and convenience.</div>
@@ -175,9 +224,9 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   <h2 class="section-title"><span>Speakers & Audio</span></h2>
   <div class="slider">
     <div class="track" id="audioTrack">
-      <div class="card"><img src="assets/images/speaker-1.jpg"><div class="price-info">₦200,000</div></div>
-      <div class="card"><img src="assets/images/speaker-2.jpg"><div class="price-info">₦250,000</div></div>
-      <div class="card"><img src="assets/images/audio-1.jpg"><div class="price-info">₦80,000</div></div>
+      <div class="card"><img src="assets/images/speaker-1.jpg"><div class="price-info">Speaker 1 - ₦200,000</div></div>
+      <div class="card"><img src="assets/images/speaker-2.jpg"><div class="price-info">Speaker 2 - ₦250,000</div></div>
+      <div class="card"><img src="assets/images/audio-1.jpg"><div class="price-info">Earbuds A - ₦80,000</div></div>
     </div>
   </div>
   <div class="info-panel">High-quality speakers and earbuds for calls, music, and entertainment.</div>
@@ -197,7 +246,7 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   </div>
 </section>
 
-<!-- CONTACT / BOTTOM FILTER -->
+<!-- CONTACT -->
 <section class="contact">
   <h2 class="section-title"><span>Contact Us</span></h2>
   <p>No. 1 Market Road, Owerri, Imo State</p>
@@ -219,11 +268,15 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 
 <script>
 // SLIDERS
-let h=0, iphone11=0, iphone12=0, w=0, a=0, b=0, r=0;
-
+let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
 setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%5)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone12').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
+setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
+setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
+setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
+setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,3600);
+setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,3800);
+setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,4000);
+setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,4200);
 setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,3200);
 setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,3400);
 setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,3600);
