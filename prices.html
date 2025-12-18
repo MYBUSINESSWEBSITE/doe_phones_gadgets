@@ -12,9 +12,9 @@
   --dark:#111;
   --oxblood:#4b0f1a;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden;}
-section{padding:90px 20px} a{text-decoration:none;}
+section{padding:90px 20px;} a{text-decoration:none;}
 
 /* SECTION TITLES */
 .section-title{text-align:center;font-size:2.4em;font-weight:900;margin-bottom:40px;position:relative;}
@@ -55,16 +55,18 @@ section{padding:90px 20px} a{text-decoration:none;}
 
 /* GRID & CARDS */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:auto;}
-.card{background:var(--ash-dark);border-radius:16px;overflow:hidden;}
+.card{background:var(--ash-dark);border-radius:16px;overflow:hidden;text-align:center;}
 .card img, .card video{width:100%;display:block;}
+.price-info{background:#4b0f1a;color:var(--gold);padding:10px;margin-top:10px;border-radius:12px;font-weight:bold;}
+
+/* CROSS PRICE STYLE */
+.old-price{text-decoration: line-through; color:#ccc; display:block; font-size:0.9em;}
+.new-price{font-size:1.1em; font-weight:900; margin-top:5px;}
 
 /* SLIDERS */
 .slider{max-width:900px;margin:auto;overflow:hidden;border-radius:20px;}
 .track{display:flex;transition:.7s}
 .track img{width:100%;}
-
-/* PRICE PANEL */
-.price-info{background:#4b0f1a;color:var(--gold);padding:15px;margin-top:10px;border-radius:12px;text-align:center;font-weight:bold;}
 
 /* CTA */
 .cta{display:inline-block;margin-top:15px;padding:12px 34px;background:var(--gold);color:#000;border-radius:30px;font-weight:bold;}
@@ -88,17 +90,14 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <div class="hero">
   <h1>DOE Phones and Gadgets</h1>
   <p>Buy • Sell • Swap premium phones, smartwatches & gadgets with confidence.</p>
-
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search phones, watches, speakers..." />
   </div>
-
   <div class="hero-nav">
     <a href="#phones">Phones</a>
     <a href="#watches">Smartwatches</a>
     <a href="#speakers">Speakers</a>
   </div>
-
   <div class="hero-slider">
     <div class="hero-track" id="heroTrack">
       <img src="assets/images/hero-1.jpg">
@@ -108,7 +107,6 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
       <img src="assets/images/hero-5.jpg">
     </div>
   </div>
-
   <div class="icon-nav">
     <a href="#phones"><img src="assets/images/icon-phone.png"><span>Phones</span></a>
     <a href="#watches"><img src="assets/images/icon-watch.png"><span>Watches</span></a>
@@ -127,44 +125,145 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <section id="phones">
   <h2 class="section-title"><span>Phones</span></h2>
 
-  <!-- iPhone 11-12 Slider -->
+  <!-- iPhone 11 Series -->
   <div class="slider">
-    <div class="track" id="iphone11-12">
-      <div class="card"><img src="assets/images/iphone11.jpg"><div class="price-info">iPhone 11 - $350</div></div>
-      <div class="card"><img src="assets/images/iphone12.jpg"><div class="price-info">iPhone 12 - $450</div></div>
+    <div class="track" id="iphone11Series">
+      <div class="card">
+        <img src="assets/images/iphone11.jpg">
+        <div class="price-info"><span class="old-price">$400</span><span class="new-price">$350</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone11pro.jpg">
+        <div class="price-info"><span class="old-price">$500</span><span class="new-price">$450</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone11promax.jpg">
+        <div class="price-info"><span class="old-price">$600</span><span class="new-price">$550</span></div>
+      </div>
     </div>
   </div>
-  <div class="info-panel">iPhone 11 & 12: Great camera, solid performance, smooth UI.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 11/12 Now</a>
+  <div class="info-panel">iPhone 11 Series: Great camera, solid performance, smooth UI.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 11 Series Now</a>
 
-  <!-- iPhone 13-14 Slider -->
+  <!-- iPhone 12 Series -->
   <div class="slider">
-    <div class="track" id="iphone13-14">
-      <div class="card"><img src="assets/images/iphone13.jpg"><div class="price-info">iPhone 13 - $550</div></div>
-      <div class="card"><img src="assets/images/iphone14.jpg"><div class="price-info">iPhone 14 - $650</div></div>
+    <div class="track" id="iphone12Series">
+      <div class="card">
+        <img src="assets/images/iphone12.jpg">
+        <div class="price-info"><span class="old-price">$500</span><span class="new-price">$450</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone12pro.jpg">
+        <div class="price-info"><span class="old-price">$600</span><span class="new-price">$550</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone12promax.jpg">
+        <div class="price-info"><span class="old-price">$700</span><span class="new-price">$650</span></div>
+      </div>
     </div>
   </div>
-  <div class="info-panel">iPhone 13 & 14: Larger battery, faster performance, improved camera.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 13/14 Now</a>
+  <div class="info-panel">iPhone 12 Series: Improved camera, faster CPU, better battery.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 12 Series Now</a>
 
-  <!-- iPhone 15-16 Slider -->
+  <!-- iPhone 13 Series -->
   <div class="slider">
-    <div class="track" id="iphone15-16">
-      <div class="card"><img src="assets/images/iphone15.jpg"><div class="price-info">iPhone 15 - $750</div></div>
-      <div class="card"><img src="assets/images/iphone16.jpg"><div class="price-info">iPhone 16 - $850</div></div>
+    <div class="track" id="iphone13Series">
+      <div class="card">
+        <img src="assets/images/iphone13.jpg">
+        <div class="price-info"><span class="old-price">$600</span><span class="new-price">$550</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone13pro.jpg">
+        <div class="price-info"><span class="old-price">$700</span><span class="new-price">$650</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone13promax.jpg">
+        <div class="price-info"><span class="old-price">$800</span><span class="new-price">$750</span></div>
+      </div>
     </div>
   </div>
-  <div class="info-panel">iPhone 15 & 16: Latest tech, best performance, premium display.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 15/16 Now</a>
+  <div class="info-panel">iPhone 13 Series: Larger battery, faster performance, improved camera.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 13 Series Now</a>
 
-  <!-- iPhone 17 Slider -->
+  <!-- iPhone 14 Series -->
   <div class="slider">
-    <div class="track" id="iphone17">
-      <div class="card"><img src="assets/images/iphone17.jpg"><div class="price-info">iPhone 17 - $1000</div></div>
+    <div class="track" id="iphone14Series">
+      <div class="card">
+        <img src="assets/images/iphone14.jpg">
+        <div class="price-info"><span class="old-price">$700</span><span class="new-price">$650</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone14pro.jpg">
+        <div class="price-info"><span class="old-price">$800</span><span class="new-price">$750</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone14promax.jpg">
+        <div class="price-info"><span class="old-price">$900</span><span class="new-price">$850</span></div>
+      </div>
     </div>
   </div>
-  <div class="info-panel">iPhone 17: Cutting-edge features, ultimate performance.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 17 Now</a>
+  <div class="info-panel">iPhone 14 Series: Sleek design, excellent camera, smooth performance.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 14 Series Now</a>
+
+  <!-- iPhone 15 Series -->
+  <div class="slider">
+    <div class="track" id="iphone15Series">
+      <div class="card">
+        <img src="assets/images/iphone15.jpg">
+        <div class="price-info"><span class="old-price">$800</span><span class="new-price">$750</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone15pro.jpg">
+        <div class="price-info"><span class="old-price">$900</span><span class="new-price">$850</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone15promax.jpg">
+        <div class="price-info"><span class="old-price">$1000</span><span class="new-price">$950</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 15 Series: Latest tech, best performance, premium display.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 15 Series Now</a>
+
+  <!-- iPhone 16 Series -->
+  <div class="slider">
+    <div class="track" id="iphone16Series">
+      <div class="card">
+        <img src="assets/images/iphone16.jpg">
+        <div class="price-info"><span class="old-price">$900</span><span class="new-price">$850</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone16pro.jpg">
+        <div class="price-info"><span class="old-price">$1000</span><span class="new-price">$950</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone16promax.jpg">
+        <div class="price-info"><span class="old-price">$1100</span><span class="new-price">$1050</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 16 Series: Ultra-fast, premium features, elegant design.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 16 Series Now</a>
+
+  <!-- iPhone 17 Series -->
+  <div class="slider">
+    <div class="track" id="iphone17Series">
+      <div class="card">
+        <img src="assets/images/iphone17.jpg">
+        <div class="price-info"><span class="old-price">$1000</span><span class="new-price">$950</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone17pro.jpg">
+        <div class="price-info"><span class="old-price">$1100</span><span class="new-price">$1050</span></div>
+      </div>
+      <div class="card">
+        <img src="assets/images/iphone17promax.jpg">
+        <div class="price-info"><span class="old-price">$1200</span><span class="new-price">$1150</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="info-panel">iPhone 17 Series: Cutting-edge features, ultimate performance.</div>
+  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 17 Series Now</a>
 </section>
 
 <!-- SMARTWATCHES -->
@@ -172,24 +271,25 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   <h2 class="section-title"><span>Smartwatches</span></h2>
   <div class="slider">
     <div class="track" id="watchTrack">
-      <div class="card"><img src="assets/images/watch-1.jpg"><div class="price-info">Watch A - $120</div></div>
-      <div class="card"><img src="assets/images/watch-2.jpg"><div class="price-info">Watch B - $150</div></div>
-      <div class="card"><img src="assets/images/watch-3.jpg"><div class="price-info">Watch C - $180</div></div>
+      <div class="card"><img src="assets/images/watch-1.jpg"><div class="price-info"><span class="old-price">$150</span><span class="new-price">$120</span></div></div>
+      <div class="card"><img src="assets/images/watch-2.jpg"><div class="price-info"><span class="old-price">$180</span><span class="new-price">$150</span></div></div>
+      <div class="card"><img src="assets/images/watch-3.jpg"><div class="price-info"><span class="old-price">$210</span><span class="new-price">$180</span></div></div>
+      <div class="card"><img src="assets/images/watch-4.jpg"><div class="price-info"><span class="old-price">$240</span><span class="new-price">$210</span></div></div>
+      <div class="card"><img src="assets/images/watch-5.jpg"><div class="price-info"><span class="old-price">$270</span><span class="new-price">$240</span></div></div>
     </div>
   </div>
   <div class="info-panel">Smartwatches improve fitness tracking, notifications, and convenience.</div>
   <a class="cta" href="https://wa.me/2347069571406">Order Smartwatch Now</a>
 </section>
 
-<!-- SPEAKERS -->
+<!-- SPEAKERS & AUDIO -->
 <section id="speakers">
   <h2 class="section-title"><span>Speakers & Audio</span></h2>
   <div class="slider">
     <div class="track" id="audioTrack">
-      <div class="card"><img src="assets/images/speaker-1.jpg"><div class="price-info">Speaker 1 - $200</div></div>
-      <div class="card"><img src="assets/images/speaker-2.jpg"><div class="price-info">Speaker 2 - $250</div></div>
-      <div class="card"><img src="assets/images/audio-1.jpg"><div class="price-info">Earbuds A - $80</div></div>
-      <div class="card"><img src="assets/images/audio-2.jpg"><div class="price-info">Earbuds B - $100</div></div>
+      <div class="card"><img src="assets/images/speaker-1.jpg"><div class="price-info"><span class="old-price">$250</span><span class="new-price">$200</span></div></div>
+      <div class="card"><img src="assets/images/speaker-2.jpg"><div class="price-info"><span class="old-price">$300</span><span class="new-price">$250</span></div></div>
+      <div class="card"><img src="assets/images/audio-1.jpg"><div class="price-info"><span class="old-price">$100</span><span class="new-price">$80</span></div></div>
     </div>
   </div>
   <div class="info-panel">High-quality speakers and earbuds for calls, music, and entertainment.</div>
@@ -213,7 +313,6 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <section class="contact">
   <h2 class="section-title"><span>Contact Us</span></h2>
   <p>No. 1 Market Road, Owerri, Imo State</p>
-
   <div class="slider">
     <div class="track" id="bottomTrack">
       <img src="assets/images/bottom-1.jpg">
@@ -221,7 +320,6 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
       <img src="assets/images/bottom-3.jpg">
     </div>
   </div>
-
   <a href="https://wa.me/2347069571406" target="_blank">WhatsApp</a>
   <a href="https://www.tiktok.com/@destinyekezie1" target="_blank">TikTok</a>
   <a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6" target="_blank">Google Maps</a>
@@ -231,15 +329,18 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 
 <script>
 // SLIDERS
-let h=0, iphone11_12=0, iphone13_14=0, iphone15_16=0, iphone17=0, w=0, a=0, b=0, r=0;
+let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
 
 setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%5)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11-12').style.transform=`translateX(-${(iphone11_12++%2)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone13-14').style.transform=`translateX(-${(iphone13_14++%2)*100}%)`,3200);
-setInterval(()=>document.getElementById('iphone15-16').style.transform=`translateX(-${(iphone15_16++%2)*100}%)`,3400);
-setInterval(()=>document.getElementById('iphone17').style.transform=`translateX(-${(iphone17++%1)*100}%)`,3600);
-setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%3)*100}%)`,3200);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%4)*100}%)`,3400);
+setInterval(()=>document.getElementById('iphone11Series').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
+setInterval(()=>document.getElementById('iphone12Series').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
+setInterval(()=>document.getElementById('iphone13Series').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
+setInterval(()=>document.getElementById('iphone14Series').style.transform=`translateX(-${(iphone14++%3)*100}%)`,3600);
+setInterval(()=>document.getElementById('iphone15Series').style.transform=`translateX(-${(iphone15++%3)*100}%)`,3800);
+setInterval(()=>document.getElementById('iphone16Series').style.transform=`translateX(-${(iphone16++%3)*100}%)`,4000);
+setInterval(()=>document.getElementById('iphone17Series').style.transform=`translateX(-${(iphone17++%3)*100}%)`,4200);
+setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,3200);
+setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,3400);
 setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,3600);
 setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,4200);
 
@@ -256,6 +357,5 @@ document.getElementById("searchInput").addEventListener("keydown",function(e){
   }
 });
 </script>
-
 </body>
 </html>
