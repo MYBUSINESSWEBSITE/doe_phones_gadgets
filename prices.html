@@ -2,107 +2,212 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DOE Phones and Gadgets - Prices & Availability</title>
+<title>Add To Cart Now | DOE Phones & Gadgets</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 :root{
-  --gold:#c9a24d;
-  --ash:#ededed;
-  --ash-dark:#e2e2e2;
-  --dark:#111;
   --oxblood:#4b0f1a;
+  --gold:#c9a24d;
+  --dark:#111;
+  --light:#f4f4f4;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden;}
-section{padding:90px 20px} a{text-decoration:none;}
+body{font-family:Segoe UI,Arial,sans-serif;background:var(--light);color:#222;overflow-x:hidden}
+a{text-decoration:none}
 
-/* SECTION TITLES */
-.section-title{text-align:center;font-size:2.4em;font-weight:900;margin-bottom:40px;position:relative;}
-.section-title::after{content:"";display:block;width:0;height:4px;background:var(--gold);margin:12px auto 0;animation:underline 1.5s forwards;}
-@keyframes underline{to{width:140px}}
-.section-title span::before{content:"🎅";position:absolute;top:-30px;left:-22px;font-size:24px;}
-
-/* HERO */
-.hero{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:#fff;text-align:center;padding:110px 20px;}
-.hero h1{color:var(--gold);font-size:3em;}
-.hero p{max-width:700px;margin:15px auto 20px;}
-.hero-nav{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;}
-.hero-nav a{padding:12px 30px;border:1px solid var(--gold);color:var(--gold);border-radius:30px;font-weight:bold;}
-
-/* SEARCH BAR */
-.search-box{max-width:420px;margin:15px auto 35px;}
-.search-box input{width:100%;padding:12px 18px;border-radius:30px;border:none;outline:none;font-size:16px;}
+/* ================= HERO ================= */
+.hero{
+  background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
+  color:#fff;
+  text-align:center;
+  padding:110px 20px 80px;
+}
+.hero h1{
+  font-size:3em;
+  color:var(--gold);
+  font-weight:900;
+}
+.hero p{
+  max-width:700px;
+  margin:15px auto 35px;
+  font-size:1.05em;
+}
 
 /* HERO SLIDER */
-.hero-slider{max-width:900px;margin:50px auto 0;overflow:hidden;border-radius:20px;}
-.hero-track{display:flex;transition:.7s}
-.hero-track img{width:100%;}
+.hero-slider{
+  max-width:900px;
+  margin:40px auto 0;
+  overflow:hidden;
+  border-radius:22px;
+}
+.hero-track{
+  display:flex;
+  width:300%;
+  animation:heroMove 18s linear infinite;
+}
+.hero-track img{
+  width:100%;
+}
+@keyframes heroMove{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-66.66%)}
+}
 
-/* ICON NAV BELOW HERO */
-.icon-nav{display:flex;justify-content:center;gap:25px;margin:25px 0;}
-.icon-nav a{display:flex;flex-direction:column;align-items:center;color:var(--gold);font-weight:bold;text-decoration:none;}
-.icon-nav img{width:60px;height:60px;margin-bottom:5px;}
+/* ICON NAV */
+.icon-nav{
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  margin-top:40px;
+}
+.icon-nav div{
+  text-align:center;
+  color:var(--gold);
+  font-weight:700;
+}
+.icon-nav img{
+  width:70px;
+  margin-bottom:6px;
+}
 
-/* INFO PANEL */
-.info-panel{background:var(--oxblood);color:var(--gold);padding:30px 35px;border-radius:30px;max-width:850px;margin:30px auto 0;text-align:center;line-height:1.7;}
+/* ================= SECTIONS ================= */
+section{padding:90px 20px}
+.section-title{
+  text-align:center;
+  font-size:2.4em;
+  font-weight:900;
+  margin-bottom:45px;
+  color:var(--oxblood);
+}
 
-/* BUY NOW */
-.buy-now{background:var(--oxblood);text-align:center;padding:80px 20px;animation:float 2.2s infinite;}
-.buy-now h2{color:var(--gold);font-size:2.4em;margin-bottom:15px;}
-.buy-now p{color:#f1e6c8;margin-bottom:30px;font-size:1.1em;}
-.buy-now a{display:inline-block;padding:16px 42px;background:var(--gold);color:#000;border-radius:40px;font-weight:900;font-size:1.1em;}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+/* ================= SLIDERS ================= */
+.slider{
+  max-width:1050px;
+  margin:0 auto 25px;
+  overflow:hidden;
+}
+.track{
+  display:flex;
+  gap:22px;
+  animation:scroll 20s linear infinite;
+}
+@keyframes scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
 
-/* GRID & CARDS */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:auto;}
-.card{background:var(--ash-dark);border-radius:16px;overflow:hidden;}
-.card img, .card video{width:100%;display:block;}
+/* ================= CARD ================= */
+.card{
+  min-width:280px;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  cursor:pointer;
+}
+.card img{
+  width:100%;
+  display:block;
+}
 
-/* SLIDERS */
-.slider{max-width:900px;margin:auto;overflow:hidden;border-radius:20px;}
-.track{display:flex;transition:.7s}
-.track img{width:100%;}
+/* PRICE TAG (SMALLER) */
+.price{
+  padding:10px;
+  background:var(--oxblood);
+  color:var(--gold);
+  text-align:center;
+  font-weight:800;
+  font-size:.95em;
+}
+.old{
+  font-size:.8em;
+  text-decoration:line-through;
+  opacity:.75;
+  display:block;
+}
 
-/* PRICE PANEL */
-.price-info{background:#4b0f1a;color:var(--gold);padding:15px;margin-top:10px;border-radius:12px;text-align:center;font-weight:bold;font-size:1.1em;}
+/* ================= MODAL ================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.modal-content{
+  background:#fff;
+  padding:25px;
+  border-radius:22px;
+  max-width:380px;
+  width:90%;
+  text-align:center;
+}
+.modal-content img{
+  width:100%;
+  border-radius:16px;
+}
+.modal-content h3{
+  margin:15px 0 5px;
+  color:var(--oxblood);
+}
+.modal-content p{
+  font-weight:800;
+  margin-bottom:20px;
+}
+.modal-content a{
+  display:block;
+  margin:8px 0;
+  padding:14px;
+  border-radius:30px;
+  font-weight:800;
+}
+.add{background:var(--gold);color:#000}
+.buy{background:var(--oxblood);color:#fff}
+.back{
+  margin-top:12px;
+  background:#111;
+  color:#fff;
+}
 
-/* CTA */
-.cta{display:inline-block;margin-top:15px;padding:12px 34px;background:var(--gold);color:#000;border-radius:30px;font-weight:bold;}
+/* ================= OTHER GADGETS ================= */
+.other .track{animation-duration:22s}
 
-/* REVIEWS */
-.reviews{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:var(--gold);}
-.review-track{display:flex;transition:.7s;}
-.review{min-width:100%;padding:45px;font-style:italic;text-align:center;line-height:1.7;}
+/* ================= REVIEWS ================= */
+.reviews{
+  background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
+  color:var(--gold);
+}
+.review{
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+  font-style:italic;
+  line-height:1.7;
+}
 
-/* CONTACT */
-.contact{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:var(--gold);text-align:center;}
-.contact a{display:inline-block;margin:10px;padding:12px 25px;background:var(--gold);color:#000;border-radius:30px;font-weight:bold;}
-
-/* FOOTER */
-footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:var(--gold);
+  text-align:center;
+  padding:18px;
+}
 </style>
 </head>
+
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>DOE Phones and Gadgets</h1>
-  <p>Buy • Sell • Swap premium phones, smartwatches & gadgets with confidence.</p>
-
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search phones, watches, speakers..." />
-  </div>
-
-  <div class="hero-nav">
-    <a href="#phones">Phones</a>
-    <a href="#watches">Smartwatches</a>
-    <a href="#speakers">Speakers</a>
-  </div>
+  <h1>ADD TO CART NOW</h1>
+  <p>Buy • Sell • Swap Premium Phones, Smartwatches & Gadgets with Confidence</p>
 
   <div class="hero-slider">
-    <div class="hero-track" id="heroTrack">
-      <img src="assets/images/hero-1.jpg">
-      <img src="assets/images/hero-2.jpg">
+    <div class="hero-track">
       <img src="assets/images/hero-3.jpg">
       <img src="assets/images/hero-4.jpg">
       <img src="assets/images/hero-5.jpg">
@@ -110,190 +215,79 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   </div>
 
   <div class="icon-nav">
-    <a href="#phones"><img src="assets/images/icon-phone.png"><span>Phones</span></a>
-    <a href="#watches"><img src="assets/images/icon-watch.png"><span>Watches</span></a>
-    <a href="#speakers"><img src="assets/images/icon-speaker.png"><span>Speakers</span></a>
+    <div><img src="assets/images/icon-phone.png"><div>Phones</div></div>
+    <div><img src="assets/images/icon-gadget.png"><div>Gadgets</div></div>
   </div>
 </div>
 
-<!-- BUY NOW -->
-<section class="buy-now">
-  <h2>See Prices & Buy Now</h2>
-  <p>Browse available phones and purchase instantly.</p>
-  <a href="#phones">SEE PRICES</a>
-</section>
-
 <!-- PHONES -->
-<section id="phones">
-  <h2 class="section-title"><span>Phones</span></h2>
-
-  <!-- iPhone 11 Series -->
+<section>
+  <h2 class="section-title">iPhone 11 Series</h2>
   <div class="slider">
-    <div class="track" id="iphone11Track">
-      <div class="card"><img src="assets/images/iphone11.jpg"><div class="price-info">iPhone 11 64GB - ₦295,000</div></div>
-      <div class="card"><img src="assets/images/iphone11pro.jpg"><div class="price-info">iPhone 11 Pro 64GB - ₦375,000</div></div>
-      <div class="card"><img src="assets/images/iphone11promax.jpg"><div class="price-info">iPhone 11 Pro Max 64GB - ₦405,000</div></div>
+    <div class="track">
+      <div class="card" onclick="openModal('iphone11.jpg','₦295,000')"><img src="assets/images/iphone11.jpg"><div class="price">₦295,000</div></div>
+      <div class="card" onclick="openModal('iphone11pro.jpg','₦375,000')"><img src="assets/images/iphone11pro.jpg"><div class="price">₦375,000</div></div>
+      <div class="card" onclick="openModal('iphone11promax.jpg','₦405,000')"><img src="assets/images/iphone11promax.jpg"><div class="price">₦405,000</div></div>
     </div>
   </div>
-  <div class="info-panel">iPhone 11 Series: Great camera, solid performance, smooth UI.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 11 Series Now</a>
-
-  <!-- iPhone 12 Series -->
-  <div class="slider">
-    <div class="track" id="iphone12Track">
-      <div class="card"><img src="assets/images/iphone12.jpg"><div class="price-info">iPhone 12 Pro 128GB - ₦475,000</div></div>
-      <div class="card"><img src="assets/images/iphone12pro.jpg"><div class="price-info">iPhone 12 Pro 256GB - ₦530,000</div></div>
-      <div class="card"><img src="assets/images/iphone12promax.jpg"><div class="price-info">iPhone 12 Pro Max 128GB - ₦570,000</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 12 Series: Smooth performance, upgraded camera and display.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 12 Series Now</a>
-
-  <!-- iPhone 13 Series -->
-  <div class="slider">
-    <div class="track" id="iphone13Track">
-      <div class="card"><img src="assets/images/iphone13.jpg"><div class="price-info">iPhone 13 128GB - ₦480,000</div></div>
-      <div class="card"><img src="assets/images/iphone13pro.jpg"><div class="price-info">iPhone 13 Pro 128GB - ₦670,000</div></div>
-      <div class="card"><img src="assets/images/iphone13promax.jpg"><div class="price-info">iPhone 13 Pro Max 128GB - ₦750,000</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 13 Series: Larger battery, faster performance, improved camera.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 13 Series Now</a>
-
-  <!-- iPhone 14 Series -->
-  <div class="slider">
-    <div class="track" id="iphone14Track">
-      <div class="card"><img src="assets/images/iphone14.jpg"><div class="price-info">iPhone 14 Pro 128GB - ₦750,000</div></div>
-      <div class="card"><img src="assets/images/iphone14pro.jpg"><div class="price-info">iPhone 14 Pro 256GB - ₦800,000</div></div>
-      <div class="card"><img src="assets/images/iphone14promax.jpg"><div class="price-info">iPhone 14 Pro Max 128GB - ₦820,000</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 14 Series: Latest features with excellent display and camera.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 14 Series Now</a>
-
-  <!-- iPhone 15 Series -->
-  <div class="slider">
-    <div class="track" id="iphone15Track">
-      <div class="card"><img src="assets/images/iphone15.jpg"><div class="price-info">iPhone 15 Pro Max 256GB - ₦1,250,000</div></div>
-      <div class="card"><img src="assets/images/iphone15pro.jpg"><div class="price-info">iPhone 15 Pro Max 512GB - ₦1,450,000</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 15 Series: High-end performance with premium design.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 15 Series Now</a>
-
-  <!-- iPhone 16 Series -->
-  <div class="slider">
-    <div class="track" id="iphone16Track">
-      <div class="card"><img src="assets/images/iphone16.jpg"><div class="price-info">iPhone 16 128GB - ₦1,000,000</div></div>
-      <div class="card"><img src="assets/images/iphone16pro.jpg"><div class="price-info">iPhone 16 Pro 128GB - ₦1,320,000</div></div>
-      <div class="card"><img src="assets/images/iphone16promax.jpg"><div class="price-info">iPhone 16 Pro Max 256GB - ₦1,600,000</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 16 Series: Cutting-edge performance and top-tier display.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 16 Series Now</a>
-
-  <!-- iPhone 17 Series -->
-  <div class="slider">
-    <div class="track" id="iphone17Track">
-      <div class="card"><img src="assets/images/iphone17.jpg"><div class="price-info">iPhone 17 - ₦TBD</div></div>
-    </div>
-  </div>
-  <div class="info-panel">iPhone 17: Ultimate performance and latest features.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order iPhone 17 Now</a>
-
 </section>
 
-<!-- SMARTWATCHES -->
-<section id="watches">
-  <h2 class="section-title"><span>Smartwatches</span></h2>
+<section>
+  <h2 class="section-title">iPhone 17 Series</h2>
   <div class="slider">
-    <div class="track" id="watchTrack">
-      <div class="card"><img src="assets/images/watch-1.jpg"><div class="price-info">Watch A - ₦120,000</div></div>
-      <div class="card"><img src="assets/images/watch-2.jpg"><div class="price-info">Watch B - ₦150,000</div></div>
-      <div class="card"><img src="assets/images/watch-3.jpg"><div class="price-info">Watch C - ₦180,000</div></div>
-      <div class="card"><img src="assets/images/watch-4.jpg"><div class="price-info">Watch D - ₦200,000</div></div>
-      <div class="card"><img src="assets/images/watch-5.jpg"><div class="price-info">Watch E - ₦220,000</div></div>
+    <div class="track">
+      <div class="card" onclick="openModal('iphone17air.jpg','Ask Vendor')"><img src="assets/images/iphone17air.jpg"><div class="price">Ask Vendor</div></div>
+      <div class="card" onclick="openModal('iphone17promax.jpg','Ask Vendor')"><img src="assets/images/iphone17promax.jpg"><div class="price">Ask Vendor</div></div>
     </div>
   </div>
-  <div class="info-panel">Smartwatches improve fitness tracking, notifications, and convenience.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order Smartwatch Now</a>
 </section>
 
-<!-- SPEAKERS -->
-<section id="speakers">
-  <h2 class="section-title"><span>Speakers & Audio</span></h2>
+<!-- OTHER GADGETS -->
+<section class="other">
+  <h2 class="section-title">Smartwatches, Speakers & Other Gadgets</h2>
   <div class="slider">
-    <div class="track" id="audioTrack">
-      <div class="card"><img src="assets/images/speaker-1.jpg"><div class="price-info">Speaker 1 - ₦200,000</div></div>
-      <div class="card"><img src="assets/images/speaker-2.jpg"><div class="price-info">Speaker 2 - ₦250,000</div></div>
-      <div class="card"><img src="assets/images/audio-1.jpg"><div class="price-info">Earbuds A - ₦80,000</div></div>
+    <div class="track">
+      <div class="card"><img src="assets/images/gadget-1.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-2.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-3.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-4.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-5.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-6.jpg"></div>
+      <div class="card"><img src="assets/images/gadget-7.jpg"></div>
     </div>
   </div>
-  <div class="info-panel">High-quality speakers and earbuds for calls, music, and entertainment.</div>
-  <a class="cta" href="https://wa.me/2347069571406">Order Audio Now</a>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews">
-  <h2 class="section-title"><span>What Our Customers Are Saying</span></h2>
-  <div class="slider">
-    <div class="review-track" id="reviewTrack">
-      <div class="review">“This is the best gadget store I have ever bought from. Destiny Enterprise made the process smooth, honest and stress-free from start to finish.”</div>
-      <div class="review">“I was impressed by the quality of the phone I received. Everything worked perfectly and the customer service was very professional.”</div>
-      <div class="review">“From swapping my old phone to getting a better one, the experience was fast, transparent and totally worth it.”</div>
-      <div class="review">“If you want genuine gadgets and peace of mind, DOE Phones and Gadgets is the place to go without any doubt.”</div>
-    </div>
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="review">
+    “Genuine phones, smooth process, no stress. DOE is trusted.”
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2 class="section-title"><span>Contact Us</span></h2>
-  <p>No. 1 Market Road, Owerri, Imo State</p>
+<footer>© 2025 DOE Phones & Gadgets</footer>
 
-  <div class="slider">
-    <div class="track" id="bottomTrack">
-      <img src="assets/images/bottom-1.jpg">
-      <img src="assets/images/bottom-2.jpg">
-      <img src="assets/images/bottom-3.jpg">
-    </div>
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <img id="modalImg">
+    <h3 id="modalPrice"></h3>
+    <a class="add" href="https://wa.me/2347069571406">Add To Cart</a>
+    <a class="buy" href="https://wa.me/2347069571406">Purchase Now</a>
+    <a class="back" href="#" onclick="closeModal()">⬅ Back</a>
   </div>
-
-  <a href="https://wa.me/2347069571406" target="_blank">WhatsApp</a>
-  <a href="https://www.tiktok.com/@destinyekezie1" target="_blank">TikTok</a>
-  <a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6" target="_blank">Google Maps</a>
-</section>
-
-<footer>© 2025 DOE Phones and Gadgets</footer>
+</div>
 
 <script>
-// SLIDERS
-let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
-setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%5)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,3600);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,3800);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,4000);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,4200);
-setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,3200);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,3400);
-setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,3600);
-setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,4200);
-
-// SEARCH
-document.getElementById("searchInput").addEventListener("keydown",function(e){
-  if(e.key==="Enter"){
-    let q=this.value.toLowerCase();
-    document.querySelectorAll("section").forEach(sec=>{
-      if(sec.innerText.toLowerCase().includes(q)){
-        sec.scrollIntoView({behavior:"smooth"});
-        return;
-      }
-    });
-  }
-});
+function openModal(img,price){
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('modalImg').src='assets/images/'+img;
+  document.getElementById('modalPrice').innerText=price;
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
 </script>
 
 </body>
