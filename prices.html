@@ -2,133 +2,118 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Add To Cart Now | DOE Phones & Gadgets</title>
+<title>Add to Cart Now – DOE Phones & Gadgets</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
-  --oxblood:#4b0f1a;
   --gold:#c9a24d;
+  --ash:#ededed;
+  --ash-dark:#e2e2e2;
+  --oxblood:#4b0f1a;
   --dark:#111;
-  --light:#f4f4f4;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI,Arial,sans-serif;background:var(--light);color:#222;overflow-x:hidden}
+body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden}
 a{text-decoration:none}
 
-/* ================= HERO ================= */
+/* SECTIONS */
+section{padding:80px 20px}
+
+/* HERO */
 .hero{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:#fff;
   text-align:center;
-  padding:110px 20px 80px;
+  padding:110px 20px;
 }
-.hero h1{
-  font-size:3em;
-  color:var(--gold);
-  font-weight:900;
-}
-.hero p{
-  max-width:700px;
-  margin:15px auto 35px;
-  font-size:1.05em;
-}
+.hero h1{color:var(--gold);font-size:3em}
+.hero p{max-width:720px;margin:15px auto 30px;font-size:1.1em}
 
 /* HERO SLIDER */
-.hero-slider{
-  max-width:900px;
-  margin:40px auto 0;
-  overflow:hidden;
-  border-radius:22px;
-}
-.hero-track{
-  display:flex;
-  width:300%;
-  animation:heroMove 18s linear infinite;
-}
-.hero-track img{
-  width:100%;
-}
-@keyframes heroMove{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-66.66%)}
-}
+.hero-slider{max-width:880px;margin:40px auto 0;overflow:hidden;border-radius:22px}
+.hero-track{display:flex;transition:.4s}
+.hero-track img{width:100%}
 
 /* ICON NAV */
 .icon-nav{
   display:flex;
   justify-content:center;
-  gap:35px;
-  margin-top:40px;
+  gap:40px;
+  margin-top:35px;
 }
-.icon-nav div{
-  text-align:center;
-  color:var(--gold);
-  font-weight:700;
-}
-.icon-nav img{
-  width:70px;
-  margin-bottom:6px;
+.icon-nav img{width:85px;height:85px}
+.icon-nav span{display:block;color:var(--gold);font-weight:700;margin-top:8px}
+
+/* BACK BUTTON */
+.back-btn{
+  display:inline-block;
+  margin:50px auto 0;
+  padding:18px 60px;
+  background:var(--gold);
+  color:#000;
+  font-weight:900;
+  border-radius:50px;
+  font-size:1.2em;
 }
 
-/* ================= SECTIONS ================= */
-section{padding:90px 20px}
+/* SECTION TITLES */
 .section-title{
   text-align:center;
   font-size:2.4em;
   font-weight:900;
-  margin-bottom:45px;
-  color:var(--oxblood);
+  margin-bottom:35px;
+  color:#111;
 }
+.section-title span{color:var(--oxblood)}
 
-/* ================= SLIDERS ================= */
-.slider{
-  max-width:1050px;
-  margin:0 auto 25px;
-  overflow:hidden;
-}
-.track{
-  display:flex;
-  gap:22px;
-  animation:scroll 20s linear infinite;
-}
-@keyframes scroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
+/* SLIDER */
+.slider{max-width:920px;margin:0 auto 30px;overflow:hidden;border-radius:22px}
+.track{display:flex;transition:.35s}
 
-/* ================= CARD ================= */
+/* CARD */
 .card{
-  min-width:280px;
-  background:#fff;
-  border-radius:18px;
+  background:var(--ash-dark);
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  min-width:100%;
   cursor:pointer;
 }
-.card img{
-  width:100%;
-  display:block;
-}
+.card img{width:100%;display:block}
 
-/* PRICE TAG (SMALLER) */
-.price{
-  padding:10px;
+/* PRICE (SMALLER AS REQUESTED) */
+.price-info{
   background:var(--oxblood);
   color:var(--gold);
-  text-align:center;
-  font-weight:800;
+  padding:8px 12px;
   font-size:.95em;
-}
-.old{
-  font-size:.8em;
-  text-decoration:line-through;
-  opacity:.75;
-  display:block;
+  font-weight:700;
+  text-align:center;
 }
 
-/* ================= MODAL ================= */
+/* CTA */
+.cta{
+  display:inline-block;
+  margin:15px auto 40px;
+  padding:12px 38px;
+  background:var(--gold);
+  color:#000;
+  font-weight:800;
+  border-radius:35px;
+}
+
+/* INFO PANEL */
+.info-panel{
+  background:var(--oxblood);
+  color:var(--gold);
+  padding:22px 28px;
+  border-radius:28px;
+  max-width:860px;
+  margin:20px auto 15px;
+  text-align:center;
+}
+
+/* MODAL */
 .modal{
   position:fixed;
   inset:0;
@@ -140,62 +125,53 @@ section{padding:90px 20px}
 }
 .modal-content{
   background:#fff;
-  padding:25px;
-  border-radius:22px;
-  max-width:380px;
-  width:90%;
+  border-radius:18px;
+  max-width:420px;
+  padding:20px;
   text-align:center;
 }
-.modal-content img{
-  width:100%;
-  border-radius:16px;
-}
-.modal-content h3{
-  margin:15px 0 5px;
-  color:var(--oxblood);
-}
-.modal-content p{
-  font-weight:800;
-  margin-bottom:20px;
-}
+.modal-content img{width:100%;border-radius:14px}
 .modal-content a{
   display:block;
-  margin:8px 0;
-  padding:14px;
-  border-radius:30px;
-  font-weight:800;
-}
-.add{background:var(--gold);color:#000}
-.buy{background:var(--oxblood);color:#fff}
-.back{
   margin-top:12px;
-  background:#111;
-  color:#fff;
+  padding:12px;
+  background:var(--gold);
+  color:#000;
+  font-weight:800;
+  border-radius:30px;
 }
 
-/* ================= OTHER GADGETS ================= */
-.other .track{animation-duration:22s}
-
-/* ================= REVIEWS ================= */
+/* REVIEWS */
 .reviews{
   background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:var(--gold);
 }
+.review-track{display:flex;transition:.4s}
 .review{
-  max-width:800px;
-  margin:0 auto;
+  min-width:100%;
+  padding:45px;
   text-align:center;
   font-style:italic;
-  line-height:1.7;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  background:#111;
+/* CONTACT */
+.contact{
+  background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);
   color:var(--gold);
   text-align:center;
-  padding:18px;
 }
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:12px 28px;
+  background:var(--gold);
+  color:#000;
+  border-radius:30px;
+  font-weight:800;
+}
+
+/* FOOTER */
+footer{background:#111;color:var(--gold);text-align:center;padding:18px}
 </style>
 </head>
 
@@ -203,91 +179,102 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <h1>ADD TO CART NOW</h1>
-  <p>Buy • Sell • Swap Premium Phones, Smartwatches & Gadgets with Confidence</p>
+  <h1>Add to Cart Now</h1>
+  <p>Buy • Sell • Swap • Premium Phones, Smartwatches & Gadgets with Confidence</p>
 
   <div class="hero-slider">
-    <div class="hero-track">
-      <img src="assets/images/hero-3.jpg">
-      <img src="assets/images/hero-4.jpg">
-      <img src="assets/images/hero-5.jpg">
+    <div class="hero-track" id="heroTrack">
+      <img src="assets/images/hero-price-1.jpg">
+      <img src="assets/images/hero-price-2.jpg">
+      <img src="assets/images/hero-price-3.jpg">
     </div>
   </div>
 
   <div class="icon-nav">
-    <div><img src="assets/images/icon-phone.png"><div>Phones</div></div>
-    <div><img src="assets/images/icon-gadget.png"><div>Gadgets</div></div>
+    <div><img src="assets/images/icon-phone.png"><span>Phones</span></div>
+    <div><img src="assets/images/icon-gadget.png"><span>Gadgets</span></div>
+    <div><img src="assets/images/icon-cart.png"><span>Cart</span></div>
   </div>
+
+  <a class="back-btn" href="index.html">⬅ Back to Previous Page</a>
 </div>
 
 <!-- PHONES -->
 <section>
-  <h2 class="section-title">iPhone 11 Series</h2>
-  <div class="slider">
-    <div class="track">
-      <div class="card" onclick="openModal('iphone11.jpg','₦295,000')"><img src="assets/images/iphone11.jpg"><div class="price">₦295,000</div></div>
-      <div class="card" onclick="openModal('iphone11pro.jpg','₦375,000')"><img src="assets/images/iphone11pro.jpg"><div class="price">₦375,000</div></div>
-      <div class="card" onclick="openModal('iphone11promax.jpg','₦405,000')"><img src="assets/images/iphone11promax.jpg"><div class="price">₦405,000</div></div>
-    </div>
-  </div>
+<h2 class="section-title"><span>iPhone 11 Series</span></h2>
+<div class="slider"><div class="track" id="iphone11">
+  <div class="card" onclick="openModal(this)"><img src="assets/images/iphone11.jpg"><div class="price-info">₦295,000</div></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/iphone11pro.jpg"><div class="price-info">₦375,000</div></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/iphone11promax.jpg"><div class="price-info">₦405,000</div></div>
+</div></div>
+<a class="cta" href="https://wa.me/2347069571406">Purchase Now</a>
 </section>
 
 <section>
-  <h2 class="section-title">iPhone 17 Series</h2>
-  <div class="slider">
-    <div class="track">
-      <div class="card" onclick="openModal('iphone17air.jpg','Ask Vendor')"><img src="assets/images/iphone17air.jpg"><div class="price">Ask Vendor</div></div>
-      <div class="card" onclick="openModal('iphone17promax.jpg','Ask Vendor')"><img src="assets/images/iphone17promax.jpg"><div class="price">Ask Vendor</div></div>
-    </div>
-  </div>
+<h2 class="section-title"><span>iPhone 17 Series</span></h2>
+<div class="slider"><div class="track" id="iphone17">
+  <div class="card" onclick="openModal(this)"><img src="assets/images/iphone17-air.jpg"><div class="price-info">Ask Vendor Now</div></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/iphone17-promax.jpg"><div class="price-info">Ask Vendor Now</div></div>
+</div></div>
+<a class="cta" href="https://wa.me/2347069571406">Ask Vendor on WhatsApp</a>
 </section>
 
 <!-- OTHER GADGETS -->
-<section class="other">
-  <h2 class="section-title">Smartwatches, Speakers & Other Gadgets</h2>
-  <div class="slider">
-    <div class="track">
-      <div class="card"><img src="assets/images/gadget-1.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-2.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-3.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-4.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-5.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-6.jpg"></div>
-      <div class="card"><img src="assets/images/gadget-7.jpg"></div>
-    </div>
-  </div>
+<section>
+<h2 class="section-title"><span>Smartwatches • Speakers • Audio • Other Gadgets</span></h2>
+<div class="slider"><div class="track" id="gadgets">
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-1.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-2.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-3.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-4.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-5.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-6.jpg"></div>
+  <div class="card" onclick="openModal(this)"><img src="assets/images/gadget-7.jpg"></div>
+</div></div>
+<a class="cta" href="https://wa.me/2347069571406">Confirm Prices on WhatsApp</a>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews">
-  <h2 class="section-title">What Our Customers Say</h2>
-  <div class="review">
-    “Genuine phones, smooth process, no stress. DOE is trusted.”
-  </div>
+<h2 class="section-title"><span>What Our Customers Say</span></h2>
+<div class="slider"><div class="review-track" id="reviews">
+  <div class="review">“Fast, honest and stress-free experience.”</div>
+  <div class="review">“Original phones, great service.”</div>
+  <div class="review">“Best gadget plug I’ve used.”</div>
+</div></div>
 </section>
 
-<footer>© 2025 DOE Phones & Gadgets</footer>
+<!-- CONTACT -->
+<section class="contact">
+<p>No. 1 Market Road, Owerri, Imo State</p>
+<a href="https://wa.me/2347069571406">WhatsApp</a>
+<a href="https://maps.app.goo.gl/wHm4RJxBF3YFTsfB6">Google Maps</a>
+</section>
+
+<footer>© 2025 DOE Phones and Gadgets</footer>
 
 <!-- MODAL -->
-<div class="modal" id="modal">
+<div class="modal" id="modal" onclick="closeModal()">
   <div class="modal-content">
     <img id="modalImg">
-    <h3 id="modalPrice"></h3>
-    <a class="add" href="https://wa.me/2347069571406">Add To Cart</a>
-    <a class="buy" href="https://wa.me/2347069571406">Purchase Now</a>
-    <a class="back" href="#" onclick="closeModal()">⬅ Back</a>
+    <a href="https://wa.me/2347069571406">Add to Cart</a>
+    <a href="https://wa.me/2347069571406">Purchase Now</a>
   </div>
 </div>
 
 <script>
-function openModal(img,price){
-  document.getElementById('modal').style.display='flex';
-  document.getElementById('modalImg').src='assets/images/'+img;
-  document.getElementById('modalPrice').innerText=price;
+let h=0,i11=0,i17=0,g=0,r=0;
+setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%3)*100}%)`,1800);
+setInterval(()=>iphone11.style.transform=`translateX(-${(i11++%3)*100}%)`,1600);
+setInterval(()=>iphone17.style.transform=`translateX(-${(i17++%2)*100}%)`,1600);
+setInterval(()=>gadgets.style.transform=`translateX(-${(g++%7)*100}%)`,1500);
+setInterval(()=>reviews.style.transform=`translateX(-${(r++%3)*100}%)`,2000);
+
+function openModal(card){
+  document.getElementById("modalImg").src = card.querySelector("img").src;
+  document.getElementById("modal").style.display="flex";
 }
-function closeModal(){
-  document.getElementById('modal').style.display='none';
-}
+function closeModal(){document.getElementById("modal").style.display="none";}
 </script>
 
 </body>
