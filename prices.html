@@ -292,17 +292,30 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <footer>© 2025 DOE Phones and Gadgets</footer>
 
 <script>
-// SLIDERS FOR PHONES ONLY (almost continuous)
-let iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0;
+<script>
+// PHONES ONLY - almost continuous movement
+const phoneTracks = [
+  {id: 'iphone11Track', count: 3},
+  {id: 'iphone12Track', count: 3},
+  {id: 'iphone13Track', count: 3},
+  {id: 'iphone14Track', count: 3},
+  {id: 'iphone15Track', count: 2},
+  {id: 'iphone16Track', count: 3},
+  {id: 'iphone17Track', count: 1}
+];
 
-// transition = 0.7s, blank time = 0.1s → interval = 0.8s
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,800);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,800);
+// Transition = 0.7s, blank time = 0.1s → total interval = 0.8s
+phoneTracks.forEach(track => {
+  let i = 0;
+  setInterval(() => {
+    const el = document.getElementById(track.id);
+    if(el) {
+      el.style.transform = `translateX(-${(i++ % track.count) * 100}%)`;
+    }
+  }, 800);
+});
+</script>
+
 
 
 // SEARCH
