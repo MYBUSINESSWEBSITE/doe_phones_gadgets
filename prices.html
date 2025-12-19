@@ -50,14 +50,6 @@
   border-radius:30px;
   font-weight:900;
   margin-bottom:15px;
-  animation: boom 1.2s ease-in-out infinite;
-}
-
-/* BOOM / PULSE animation */
-@keyframes boom{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-  100%{transform:scale(1)}
 }
 
 .popup-back{
@@ -66,31 +58,7 @@
   font-size:16px;
   cursor:pointer;
 
-} 
-  //* ADD TO CART BUTTON – SMALL BUT READABLE */
-.add-cart-btn{
-  width:100%;
-  background:#c9a24d;
-  color:#000;
-  border:none;
-  padding:8px 0;        /* small height */
-  margin-top:8px;
-  border-radius:10px;
-  font-size:14px;       /* readable */
-  font-weight:800;
-  line-height:1.2;      /* prevents cramping */
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
 }
-
-.add-cart-btn:active{
-  transform:scale(0.97);
-}
-
-
   
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden;}
@@ -225,14 +193,22 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <section id="phones">
   <h2 class="section-title"><span>Phones</span></h2>
 
-  
- <!-- iPhone 11 --> 
-<div class="card">
+  <!-- iPhone 11 Series -->
+  <div class="slider">
+    <div class="track" id="iphone11Track">
+      <div class="card">
   <img src="assets/images/iphone11.jpg">
   <div class="price-info">iPhone 11 64GB - ₦295,000</div>
-  <button class="add-cart-btn"
-    onclick="openPopup('assets/images/iphone11.jpg','iPhone 11 64GB - ₦295,000')">
-    🛒 Add to Cart
+  <button class="add-cart-btn" onclick="openPopup('assets/images/iphone11.jpg','iPhone 11 64GB - ₦295,000')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="assets/images/iphone11pro.jpg">
+  <div class="price-info">iPhone 11 Pro 64GB - ₦375,000</div>
+  <button class="add-cart-btn" onclick="openPopup('assets/images/iphone11pro.jpg','iPhone 11 Pro 64GB - ₦375,000')">
+    Add to Cart
   </button>
 </div>
 
@@ -487,18 +463,18 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 // SLIDERS
 let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
 setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,5700);
 
-setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`, SLIDE_TIME);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`, SLIDE_TIME);
-setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`, SLIDE_TIME);
+setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,5700);
+setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,5700);
+setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,5700);
+setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,5700);
 // SEARCH
 document.getElementById("searchInput").addEventListener("keydown",function(e){
   if(e.key==="Enter"){
