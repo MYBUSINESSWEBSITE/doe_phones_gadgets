@@ -463,16 +463,17 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 // SLIDERS
 let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
 setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,5700);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,5700);
+setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`, SLIDE_TIME);
 
-setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,5700);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,5700);
+
+setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`, SLIDE_TIME);
+setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`, SLIDE_TIME);
 setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,5700);
 setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,5700);
 // SEARCH
