@@ -108,14 +108,13 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   </div>
 
   <div class="hero-slider">
-    <div class="hero-track" id="heroTrack">
-      <img src="assets/images/hero-1.jpg">
-      <img src="assets/images/hero-2.jpg">
-      <img src="assets/images/hero-3.jpg">
-      <img src="assets/images/hero-4.jpg">
-      <img src="assets/images/hero-5.jpg">
-    </div>
+  <div class="hero-track" id="heroTrack">
+    <img src="assets/images/hero-2.jpg">
+    <img src="assets/images/hero-3.jpg">
+    <img src="assets/images/hero-5.jpg">
   </div>
+</div>
+
 
   <div class="icon-nav">
     <a href="#phones"><img src="assets/images/icon-phone.png"><span>Phones</span></a>
@@ -277,7 +276,7 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <script>
 // SLIDERS
 let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
-setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%5)*100}%)`,3000);
+setInterval(()=>heroTrack.style.transform=`translateX(-${(h++%3)*100}%)`,3000);
 setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
 setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
 setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
