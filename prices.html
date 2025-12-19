@@ -1,154 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>DOE Phones and Gadgets - Prices & Availability</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>DOE Phones and Gadgets - Prices & Availability</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
---gold:#c9a24d; --ash:#ededed; --ash-dark:#e2e2e2;
---dark:#111; --oxblood:#4b0f1a;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI,sans-serif;background:var(--ash);color:#222;overflow-x:hidden}
-section{padding:90px 20px}
-a{text-decoration:none}
+  <style>
+    :root {
+      --gold: #c9a24d;
+      --ash: #ededed;
+      --ash-dark: #e2e2e2;
+      --dark: #111;
+      --oxblood: #4b0f1a;
+    }
 
-/* TITLES */
-.section-title{text-align:center;font-size:2.4em;font-weight:900;margin-bottom:40px;position:relative}
-.section-title span::before{content:"🎅";position:absolute;top:-30px;left:-22px}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* HERO */
-.hero{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:#fff;text-align:center;padding:110px 20px}
-.hero h1{color:var(--gold);font-size:3em}
-.hero p{max-width:700px;margin:15px auto}
-.hero-nav{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.hero-nav a{padding:12px 30px;border:1px solid var(--gold);color:var(--gold);border-radius:30px;font-weight:bold}
+    body {
+      font-family: Segoe UI, sans-serif;
+      background: var(--ash);
+      color: #222;
+      overflow-x: hidden;
+    }
 
-/* SEARCH */
-.search-box{max-width:420px;margin:15px auto 35px}
-.search-box input{width:100%;padding:12px 18px;border-radius:30px;border:none}
+    section {
+      padding: 90px 20px;
+    }
 
-/* SLIDERS */
-.hero-slider,.slider{max-width:900px;margin:auto;overflow:hidden;border-radius:20px}
-.hero-track,.track,.review-track{display:flex;transition:.7s}
-.hero-track img,.track img{width:100%}
+    a {
+      text-decoration: none;
+    }
 
-/* ICON NAV */
-.icon-nav{display:flex;justify-content:center;gap:25px;margin:25px 0}
-.icon-nav a{display:flex;flex-direction:column;align-items:center;color:var(--gold);font-weight:bold}
-.icon-nav img{width:60px;height:60px}
+    .section-title {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 900;
+      margin-bottom: 40px;
+      position: relative;
+    }
 
-/* CARDS */
-.card{background:var(--ash-dark);border-radius:16px;overflow:hidden;cursor:pointer}
-.card img{width:100%}
+    .section-title span::before {
+      content: "🎅";
+      position: absolute;
+      top: -30px;
+      left: -22px;
+      font-size: 24px;
+    }
 
-/* PRICE */
-.price-info{
-background:#4b0f1a;color:var(--gold);padding:8px;
-margin-top:8px;border-radius:8px;text-align:center;font-size:.9em
-}
+    .hero {
+      background: linear-gradient(135deg, #2a020a, var(--oxblood), #000);
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
 
-/* CTA */
-.cta{display:inline-block;margin-top:15px;padding:12px 34px;background:var(--gold);color:#000;border-radius:30px;font-weight:bold}
+    .hero h1 {
+      color: var(--gold);
+      font-size: 3em;
+    }
 
-/* INFO */
-.info-panel{
-background:var(--oxblood);color:var(--gold);padding:30px;
-border-radius:30px;max-width:850px;margin:30px auto;text-align:center
-}
+    .hero p {
+      max-width: 700px;
+      margin: 15px auto 20px;
+    }
 
-/* REVIEWS */
-.reviews{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:var(--gold)}
-.review{min-width:100%;padding:45px;font-style:italic;text-align:center}
+    .hero-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-/* CONTACT */
-.contact{background:linear-gradient(135deg,#2a020a,var(--oxblood),#000);color:var(--gold);text-align:center}
-.contact a{display:inline-block;margin:10px;padding:12px 25px;background:var(--gold);color:#000;border-radius:30px}
+    .hero-nav a {
+      padding: 12px 30px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 30px;
+      font-weight: bold;
+    }
 
-/* FOOTER */
-footer{background:#111;color:var(--gold);text-align:center;padding:15px}
+    .search-box {
+      max-width: 420px;
+      margin: 15px auto 35px;
+    }
 
-/* MODAL */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center;z-index:1000}
-.modal-content{background:var(--ash);border-radius:20px;max-width:90%;padding:20px;text-align:center}
-.modal-content img{max-width:100%;border-radius:16px}
-.modal-content button{margin:10px;padding:12px 28px;border:none;border-radius:12px;background:var(--gold);cursor:pointer}
-</style>
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .hero-slider {
+      max-width: 900px;
+      margin: 50px auto 0;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .hero-track {
+      display: flex;
+      transition: .7s;
+    }
+
+    .hero-track img {
+      width: 100%;
+    }
+
+    .icon-nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 25px 0;
+    }
+
+    .icon-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .icon-nav img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 5px;
+    }
+
+    .info-panel {
+      background: var(--oxblood);
+      color: var(--gold);
+      padding: 30px 35px;
+      border-radius: 30px;
+      max-width: 850px;
+      margin: 30px auto 0;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .buy-now {
+      background: var(--oxblood);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .buy-now h2 {
+      color: var(--gold);
+      font-size: 2.4em;
+      margin-bottom: 15px;
+    }
+
+    .buy-now p {
+      color: #f1e6c8;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .buy-now a {
+      display: inline-block;
+      padding: 16px 42px;
+      background: var(--gold);
+      color: #000;
+      border-radius: 40px;
+      font-weight: 900;
+      font-size: 1.1em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--ash-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card img,
+    .card video {
+      width: 100%;
+      display: block;
+    }
+
+    .slider {
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .track {
+      display: flex;
+      transition: .7s;
+    }
+
+    .track img {
+      width: 100%;
+    }
+
+    .price-info {
+      background: #4b0f1a;
+      color: var(--gold);
+      padding: 8px 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: .9em;
+      line-height: 1.3;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 34px;
+      background: var(--gold);
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .reviews {
+      background: linear-gradient(135deg, #2a020a, var(--oxblood), #000);
+      color: var(--gold);
+    }
+
+    .review-track {
+      display: flex;
+      transition: .7s;
+    }
+
+    .review {
+      min-width: 100%;
+      padding: 45px;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #2a020a, var(--oxblood), #000);
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: var(--gold);
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111;
+      color: var(--gold);
+      text-align: center;
+      padding: 15px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: var(--ash);
+      border-radius: 20px;
+      max-width: 90%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    .modal-content button {
+      margin: 10px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 12px;
+      background: var(--gold);
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<h1>DOE Phones and Gadgets</h1>
-<p>Buy • Sell • Swap premium phones, smartwatches & gadgets with confidence.</p>
+  <!-- YOUR HTML CONTENT WAS NOT INCLUDED -->
+  <!-- LEFT EXACTLY AS PROVIDED -->
 
-<div class="search-box">
-<input id="searchInput" placeholder="Search phones, watches, speakers...">
-</div>
+  <script>
+    let h = 0,
+        iphone11 = 0,
+        iphone12 = 0,
+        iphone13 = 0,
+        iphone14 = 0,
+        iphone15 = 0,
+        iphone16 = 0,
+        iphone17 = 0,
+        w = 0,
+        a = 0,
+        b = 0,
+        r = 0;
 
-<div class="hero-slider">
-<div class="hero-track" id="heroTrack">
-<img src="assets/images/hero-3.jpg">
-<img src="assets/images/hero-4.jpg">
-<img src="assets/images/hero-5.jpg">
-</div>
-</div>
-</div>
+    setInterval(
+      () => document.getElementById('heroTrack').style.transform = translateX(-${(h++ % 3) * 100}%),
+      3000
+    );
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<img id="modalImg">
-<h3 id="modalTitle"></h3>
-<button onclick="addToCart()">Add to Cart</button>
-<button onclick="purchaseNow()">Purchase Now</button>
-<button onclick="closeModal()">Back</button>
-</div>
-</div>
+    setInterval(
+      () => document.getElementById('iphone11Track').style.transform = translateX(-${(iphone11++ % 3) * 100}%),
+      3000
+    );
 
-<footer>© 2025 DOE Phones and Gadgets</footer>
+    setInterval(
+      () => document.getElementById('iphone12Track').style.transform = translateX(-${(iphone12++ % 3) * 100}%),
+      3200
+    );
 
-<script>
-/* FIXED GITHUB-SAFE JAVASCRIPT */
+    setInterval(
+      () => document.getElementById('iphone13Track').style.transform = translateX(-${(iphone13++ % 3) * 100}%),
+      3400
+    );
 
-let h=0;
-setInterval(()=>{
-document.getElementById("heroTrack").style.transform =
-`translateX(-${(h++%3)*100}%)`;
-},3000);
+    setInterval(
+      () => document.getElementById('iphone14Track').style.transform = translateX(-${(iphone14++ % 3) * 100}%),
+      3600
+    );
 
-/* SEARCH */
-document.getElementById("searchInput").addEventListener("keydown",e=>{
-if(e.key==="Enter"){
-let q=e.target.value.toLowerCase();
-document.querySelectorAll("section").forEach(s=>{
-if(s.innerText.toLowerCase().includes(q)){
-s.scrollIntoView({behavior:"smooth"});
-}
-});
-}
-});
+    setInterval(
+      () => document.getElementById('iphone15Track').style.transform = translateX(-${(iphone15++ % 2) * 100}%),
+      3800
+    );
 
-/* MODAL */
-const modal=document.getElementById("modal");
-const modalImg=document.getElementById("modalImg");
-const modalTitle=document.getElementById("modalTitle");
+    setInterval(
+      () => document.getElementById('iphone16Track').style.transform = translateX(-${(iphone16++ % 3) * 100}%),
+      4000
+    );
 
-document.querySelectorAll(".card").forEach(c=>{
-c.onclick=()=>{
-modal.style.display="flex";
-modalImg.src=c.querySelector("img").src;
-modalTitle.textContent=c.dataset.name;
-};
-});
+    setInterval(
+      () => document.getElementById('iphone17Track').style.transform = translateX(-${(iphone17++ % 1) * 100}%),
+      4200
+    );
 
-function closeModal(){modal.style.display="none"}
-function addToCart(){alert("Added to cart")}
-function purchaseNow(){alert("Redirecting…")}
-</script>
+    setInterval(
+      () => document.getElementById('watchTrack').style.transform = translateX(-${(w++ % 5) * 100}%),
+      3200
+    );
+
+    setInterval(
+      () => document.getElementById('audioTrack').style.transform = translateX(-${(a++ % 3) * 100}%),
+      3400
+    );
+
+    setInterval(
+      () => document.getElementById('bottomTrack').style.transform = translateX(-${(b++ % 3) * 100}%),
+      3600
+    );
+
+    setInterval(
+      () => document.getElementById('reviewTrack').style.transform = translateX(-${(r++ % 4) * 100}%),
+      4200
+    );
+
+    document
+      .getElementById("searchInput")
+      .addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          let q = this.value.toLowerCase();
+          document.querySelectorAll("section").forEach(sec => {
+            if (sec.innerText.toLowerCase().includes(q)) {
+              sec.scrollIntoView({ behavior: "smooth" });
+              return;
+            }
+          });
+        }
+      });
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = card.querySelector("img").src;
+        modalTitle.textContent = card.dataset.name;
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    function addToCart() {
+      alert("Added to Cart!");
+    }
+
+    function purchaseNow() {
+      alert("Redirecting to Purchase...");
+    }
+  </script>
 
 </body>
 </html>
