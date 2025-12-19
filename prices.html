@@ -81,13 +81,39 @@ section{padding:90px 20px} a{text-decoration:none;}
 /* FOOTER */
 footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 </style>
+  .cart-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  color:var(--gold);
+  font-size:3em;
+}
+
+.cart-icon{
+  font-size:1.1em;
+}
+
+.hero-tagline{
+  max-width:700px;
+  margin:15px auto 20px;
+  font-size:1.05em;
+}
+
 </head>
 <body>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>DOE Phones and Gadgets</h1>
-  <p>Buy • Sell • Swap premium phones, smartwatches & gadgets with confidence.</p>
+  <div class="hero">
+
+<h1 class="cart-header">
+  Add to Cart Now <span class="cart-icon">🛒</span>
+</h1>
+
+<p class="hero-tagline">
+  You are just a click away from having your choice gadgets. Buy • Sell • Swap now
+</p>
+
 
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search phones, watches, speakers..." />
