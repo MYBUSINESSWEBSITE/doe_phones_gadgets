@@ -57,9 +57,8 @@
   border:none;
   font-size:16px;
   cursor:pointer;
-  
-}
 
+}
   
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden;}
@@ -87,7 +86,10 @@ section{padding:90px 20px} a{text-decoration:none;}
 .hero-track{display:flex;transition:.7s}
 .hero-track img{width:100%;}
 
- 
+/* ICON NAV BELOW HERO */
+.icon-nav{display:flex;justify-content:center;gap:25px;margin:25px 0;}
+.icon-nav a{display:flex;flex-direction:column;align-items:center;color:var(--gold);font-weight:bold;text-decoration:none;}
+.icon-nav img{width:60px;height:60px;margin-bottom:5px;}
 
 /* INFO PANEL */
 .info-panel{background:var(--oxblood);color:var(--gold);padding:30px 35px;border-radius:30px;max-width:850px;margin:30px auto 0;text-align:center;line-height:1.7;}
@@ -153,10 +155,6 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
   You are just a click away from having your choice gadgets. Buy • Sell • Swap now
 </p>
 
-    <p class="hero-cart-caption">
-  Click on <strong>Add to Cart</strong> to make purchases <span>🛒</span>
-</p>
-
 
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search phones, watches, speakers..." />
@@ -173,6 +171,14 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
     <img src="assets/images/hero-2.jpg">
     <img src="assets/images/hero-3.jpg">
     <img src="assets/images/hero-5.jpg">
+  </div>
+</div>
+
+
+  <div class="icon-nav">
+    <a href="#phones"><img src="assets/images/icon-phone.png"><span>Phones</span></a>
+    <a href="#watches"><img src="assets/images/icon-watch.png"><span>Watches</span></a>
+    <a href="#speakers"><img src="assets/images/icon-speaker.png"><span>Speakers</span></a>
   </div>
 </div>
 
@@ -465,9 +471,8 @@ setInterval(()=>document.getElementById('iphone15Track').style.transform=`transl
 setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`, SLIDE_TIME);
 setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`, SLIDE_TIME);
 
-
-setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`, SLIDE_TIME);
-setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`, SLIDE_TIME);
+setInterval(()=>watchTrack.style.transform=`translateX(-${(w++%5)*100}%)`,5700);
+setInterval(()=>audioTrack.style.transform=`translateX(-${(a++%3)*100}%)`,5700);
 setInterval(()=>bottomTrack.style.transform=`translateX(-${(b++%3)*100}%)`,5700);
 setInterval(()=>reviewTrack.style.transform=`translateX(-${(r++%4)*100}%)`,5700);
 // SEARCH
