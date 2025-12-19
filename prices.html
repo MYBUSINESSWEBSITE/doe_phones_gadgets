@@ -11,7 +11,9 @@
   --ash-dark:#e2e2e2;
   --dark:#111;
   --oxblood:#4b0f1a;
-  /* POPUP MODAL */
+}
+
+ /* ===== POPUP MODAL ===== */
 .popup-overlay{
   position:fixed;
   inset:0;
@@ -37,6 +39,7 @@
   margin-bottom:15px;
 }
 
+
 .popup-box h3{
   margin-bottom:20px;
   font-size:1.2em;
@@ -58,6 +61,39 @@
   font-size:16px;
   cursor:pointer;
 
+}
+  /* ===== POPUP ANIMATIONS ===== */
+
+.popup-overlay{
+  animation: popupFade .3s ease forwards;
+}
+
+@keyframes popupFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.popup-box img{
+  transform: scale(0.2);
+  animation: imagePop 3s ease forwards;
+}
+
+@keyframes imagePop{
+  0%{transform:scale(0.2);opacity:0;}
+  70%{transform:scale(1.08);opacity:1;}
+  100%{transform:scale(1);}
+}
+
+.popup-order{
+  animation: shake 1.5s infinite;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  85%{transform:translateX(0)}
+  90%{transform:translateX(-2px)}
+  95%{transform:translateX(2px)}
+  100%{transform:translateX(0)}
 }
   
 *{margin:0;padding:0;box-sizing:border-box}
@@ -490,8 +526,27 @@ document.getElementById("searchInput").addEventListener("keydown",function(e){
 
 /* ===== ADD TO CART POPUP LOGIC ===== */
 function openPopup(img, price){
-  document.getElementById("popupImg").src = img;
+  const popup = document.getElementById("cartPopup");
+  const popupImg = document.getElementById("popupImg");
+
+  popup.style.display = "flex";
+
+  // restart image animation every time
+  popupImg.style.animation = "none";
+  popupImg.offsetHeight; // force refresh
+  popupImg.style.animation = "";
+
+  popupImg.src = img;
   document.getElementById("popupPrice").innerText = price;
+
+  const waLink = "https://wa.me/2347069571406?text=" +
+    encodeURIComponent("I want to order: " + price);
+
+  document.getElementById("popupOrder").href = waLink;
+  document.getElementById("popupPrice").onclick = () => {
+    window.open(waLink, "_blank");
+  };
+}
 
   const waLink =
     "https://wa.me/2347069571406?text=" +
