@@ -292,21 +292,18 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <footer>© 2025 DOE Phones and Gadgets</footer>
 
 <script>
-// SLIDERS
-let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
+// SLIDERS FOR PHONES ONLY (almost continuous)
+let iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0;
 
-setInterval(()=>document.getElementById('heroTrack').style.transform=`translateX(-${(h++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,3600);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,3800);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,4000);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,4200);
-setInterval(()=>document.getElementById('watchTrack').style.transform=`translateX(-${(w++%5)*100}%)`,3200);
-setInterval(()=>document.getElementById('audioTrack').style.transform=`translateX(-${(a++%3)*100}%)`,3400);
-setInterval(()=>document.getElementById('bottomTrack').style.transform=`translateX(-${(b++%3)*100}%)`,3600);
-setInterval(()=>document.getElementById('reviewTrack').style.transform=`translateX(-${(r++%4)*100}%)`,4200);
+// transition = 0.7s, blank time = 0.1s → interval = 0.8s
+setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,800);
+setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,800);
+
 
 // SEARCH
 document.getElementById("searchInput").addEventListener("keydown",function(e){
