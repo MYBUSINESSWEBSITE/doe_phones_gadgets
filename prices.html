@@ -66,7 +66,26 @@
   font-size:16px;
   cursor:pointer;
 
+} 
+  /* ADD TO CART BUTTON */
+.add-cart-btn{
+  width:100%;
+  background:#c9a24d;
+  color:#000;
+  border:none;
+  padding:15px 0;
+  margin-top:12px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  display:block;
 }
+
+.add-cart-btn:active{
+  transform:scale(0.96);
+}
+
   
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI, sans-serif;background:var(--ash);color:#222;overflow-x:hidden;}
@@ -201,9 +220,16 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <section id="phones">
   <h2 class="section-title"><span>Phones</span></h2>
 
-  <!-- iPhone 11 Series -->
-  <!-- iPhone 11 Series -->
- <!-- iPhone 11 Series --> <div class="slider"> <div class="track" id="iphone11Track"> <div class="card"> <img src="assets/images/iphone11.jpg"> <div class="price-info">iPhone 11 64GB - ₦295,000</div> <button class="add-cart-btn" onclick="openPopup('assets/images/iphone11.jpg','iPhone 11 64GB - ₦295,000')"> Add to Cart </button> </div>
+  
+ <!-- iPhone 11 --> 
+<div class="card">
+  <img src="assets/images/iphone11.jpg">
+  <div class="price-info">iPhone 11 64GB - ₦295,000</div>
+  <button class="add-cart-btn"
+    onclick="openPopup('assets/images/iphone11.jpg','iPhone 11 64GB - ₦295,000')">
+    🛒 Add to Cart
+  </button>
+</div>
 
 <div class="card">
   <img src="assets/images/iphone11promax.jpg">
