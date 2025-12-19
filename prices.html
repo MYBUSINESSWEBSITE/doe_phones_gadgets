@@ -291,12 +291,6 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <footer>© 2025 DOE Phones and Gadgets</footer>
 
 <script>
-<script>
-/* =====================================
-   GROUP SLIDERS — MOVE ALL CARDS TOGETHER
-   No waiting, no gaps, instant replacement
-===================================== */
-
 function groupSlider(trackId, interval) {
   const track = document.getElementById(trackId);
   if (!track) return;
@@ -309,13 +303,15 @@ function groupSlider(trackId, interval) {
 
   let index = 0;
 
+  const cardWidth = cards[0].offsetWidth; // width of one card
+  const groupWidth = cardWidth * (count / 2); // original group width
+
   setInterval(() => {
     index++;
     track.style.transition = "transform .7s ease";
-    track.style.transform = `translateX(-${index * 100}%)`;
+    track.style.transform = `translateX(-${index * groupWidth}px)`;
 
-    // Reset instantly after full group passes
-    if (index === count) {
+    if (index === count / 2) {
       setTimeout(() => {
         track.style.transition = "none";
         track.style.transform = "translateX(0)";
@@ -324,6 +320,26 @@ function groupSlider(trackId, interval) {
     }
   }, interval);
 }
+
+/* HERO */
+groupSlider("heroTrack", 3000);
+
+/* PHONES */
+groupSlider("iphone11Track", 3000);
+groupSlider("iphone12Track", 3200);
+groupSlider("iphone13Track", 3400);
+groupSlider("iphone14Track", 3600);
+groupSlider("iphone15Track", 3800);
+groupSlider("iphone16Track", 4000);
+groupSlider("iphone17Track", 4200);
+
+/* OTHERS */
+groupSlider("watchTrack", 3200);
+groupSlider("audioTrack", 3400);
+groupSlider("bottomTrack", 3600);
+groupSlider("reviewTrack", 4200);
+</script>
+
 
 /* HERO */
 groupSlider("heroTrack", 3000);
