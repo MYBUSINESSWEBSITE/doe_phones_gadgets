@@ -291,21 +291,58 @@ footer{background:#111;color:var(--gold);text-align:center;padding:15px;}
 <footer>© 2025 DOE Phones and Gadgets</footer>
 
 <script>
-// SLIDERS
-let h=0, iphone11=0, iphone12=0, iphone13=0, iphone14=0, iphone15=0, iphone16=0, iphone17=0, w=0, a=0, b=0, r=0;
+<script>
+/* =====================================
+   GROUP SLIDERS — MOVE ALL CARDS TOGETHER
+   No waiting, no gaps, instant replacement
+===================================== */
 
-setInterval(()=>document.getElementById('heroTrack').style.transform=`translateX(-${(h++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone11Track').style.transform=`translateX(-${(iphone11++%3)*100}%)`,3000);
-setInterval(()=>document.getElementById('iphone12Track').style.transform=`translateX(-${(iphone12++%3)*100}%)`,3200);
-setInterval(()=>document.getElementById('iphone13Track').style.transform=`translateX(-${(iphone13++%3)*100}%)`,3400);
-setInterval(()=>document.getElementById('iphone14Track').style.transform=`translateX(-${(iphone14++%3)*100}%)`,3600);
-setInterval(()=>document.getElementById('iphone15Track').style.transform=`translateX(-${(iphone15++%2)*100}%)`,3800);
-setInterval(()=>document.getElementById('iphone16Track').style.transform=`translateX(-${(iphone16++%3)*100}%)`,4000);
-setInterval(()=>document.getElementById('iphone17Track').style.transform=`translateX(-${(iphone17++%1)*100}%)`,4200);
-setInterval(()=>document.getElementById('watchTrack').style.transform=`translateX(-${(w++%5)*100}%)`,3200);
-setInterval(()=>document.getElementById('audioTrack').style.transform=`translateX(-${(a++%3)*100}%)`,3400);
-setInterval(()=>document.getElementById('bottomTrack').style.transform=`translateX(-${(b++%3)*100}%)`,3600);
-setInterval(()=>document.getElementById('reviewTrack').style.transform=`translateX(-${(r++%4)*100}%)`,4200);
+function groupSlider(trackId, interval) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+
+  const cards = Array.from(track.children);
+  const count = cards.length;
+
+  // Duplicate the full group once
+  cards.forEach(card => track.appendChild(card.cloneNode(true)));
+
+  let index = 0;
+
+  setInterval(() => {
+    index++;
+    track.style.transition = "transform .7s ease";
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // Reset instantly after full group passes
+    if (index === count) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        index = 0;
+      }, 700);
+    }
+  }, interval);
+}
+
+/* HERO */
+groupSlider("heroTrack", 3000);
+
+/* PHONES */
+groupSlider("iphone11Track", 3000);
+groupSlider("iphone12Track", 3200);
+groupSlider("iphone13Track", 3400);
+groupSlider("iphone14Track", 3600);
+groupSlider("iphone15Track", 3800);
+groupSlider("iphone16Track", 4000);
+groupSlider("iphone17Track", 4200);
+
+/* OTHERS */
+groupSlider("watchTrack", 3200);
+groupSlider("audioTrack", 3400);
+groupSlider("bottomTrack", 3600);
+groupSlider("reviewTrack", 4200);
+</script>
 
 // SEARCH
 document.getElementById("searchInput").addEventListener("keydown",function(e){
